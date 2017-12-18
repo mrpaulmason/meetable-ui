@@ -49,7 +49,63 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+a:hover, input[type="submit"]:hover {
   background-color: #fff;
   color: black;
+}
+
+img {
+  cursor: pointer;
+}
+
+p {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1em;
+  color: #fff;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+
+input[type="submit"] {
+  width: 120px;
+  height: 45px;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #fff;
+  transition: color 170ms ease-in-out, border-color 170ms ease-in-out;
+  padding: 10px;
+  text-decoration: none;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+select {
+  width: 300px;
+  height: 40px;
+  font-size: 25px;
+}
+
+#x-icon {
+  float: right;
+  margin-right: 32%;
 }

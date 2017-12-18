@@ -1,44 +1,47 @@
 import React from 'react';
-import ReactModal from 'react-modal';
 
 class NotificationForm extends React.Component {
 
   state = {
-    showModal: false
+    email: '',
+    selectValue: 'Less than 25%'
   }
 
-  handleOpenModal = () => {
-    this.setState({ showModal: true });
+  handleSelectChange = (e) => {
+    this.setState({
+      selectValue: e.target.value
+    })
   }
 
-  handleCloseModal = () => {
-    this.setState({ showModal: false });
+  handleInputChange = (e) => {
+    this.setState({
+      email: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Your email is ${this.state.email} and the percantage of texts that are meeting related is ${this.state.selectValue}.`)
   }
 
   render () {
     return (
       <div>
-        <span>
-          <a onClick={this.handleOpenModal}>Coming Soon - Get Notified</a>
-        </span>
-        <ReactModal
-           isOpen={this.state.showModal}
-           contentLabel="Inline Styles Modal Example"
-           style={{
-              overlay: {
-                backgroundColor: 'rgba(0,0,0,0.7)',
-                width: '50%',
-                height: '50%',
-                margin: 'auto'
-              },
-              content: {
-                color: 'lightsteelblue'
-              }
-            }}
-        >
-          <p>Modal text!</p>
-          <button onClick={this.handleCloseModal}>Close Modal</button>
-        </ReactModal>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Private Beta Waitlist</h2>
+          <h1>Email Address *</h1>
+          <input type='text' onChange={this.handleInputChange}></input>
+          <h1>Select</h1>
+          <p>How much of your texting is about meeting up?</p>
+          <select onChange={this.handleSelectChange}>
+            <option value='Less than 25%'>Less than 25%</option>
+            <option value='25-50%'>25-50%</option>
+            <option value='50-75%'>50-75%</option>
+            <option value='More than 75%'>More than 75%</option>
+          </select>
+          <br/>
+          <input type='submit' value='SUBMIT'></input>
+        </form>
       </div>
     );
   }

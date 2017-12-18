@@ -6,46 +6,50 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+  color: #fff;
 }
 
-@media (max-width: 1198px) {
+@media (max-width: 1298px) {
   body {
-    background-size: 130%;
+    background-size: 150%;
   }
 }
 
 @media (max-width: 921px) {
   body {
-    background-size: 140%;
+    background-size: 160%;
   }
 }
 
 @media (max-width: 855px) {
   body {
-    background-size: 160%;
+    background-size: 180%;
   }
 }
 
 @media (max-width: 749px) {
   body {
-    background-size: 180%;
+    background-color: #212121;
   }
 }
 
-@media (max-width: 665px) {
+@media (max-width: 710px) {
   body {
-    background-size: 200%;
+    background-color: #212121;
+    background-image: none;
   }
 }
 
 @media (max-width: 599px) {
   body {
-    background-size: 240%;
+    background-color: #212121;
+    background-image: none;
   }
 }
 
 @media (max-width: 499px) {
   body {
-    background-size: 300%;
+    background-color: #212121;
+    background-image: none;
   }
 }
