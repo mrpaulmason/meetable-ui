@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+h2 {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1em;
+  color: #fff;
+}
+
+h1 {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1em;
+  color: #fff;
+}
+
+.landing-page h1 {
+  margin-top: 185px;
+}
+
+.landing-page h2 {
+  margin: 35px;
+}

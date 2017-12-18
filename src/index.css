@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #FAFAFA;
+  background-image: url('./new_york_city.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+@media (max-width: 1198px) {
+  body {
+    background-size: 130%;
+  }
+}
+
+@media (max-width: 921px) {
+  body {
+    background-size: 140%;
+  }
+}
+
+@media (max-width: 855px) {
+  body {
+    background-size: 160%;
+  }
+}
+
+@media (max-width: 749px) {
+  body {
+    background-size: 180%;
+  }
+}
+
+@media (max-width: 665px) {
+  body {
+    background-size: 200%;
+  }
+}
+
+@media (max-width: 599px) {
+  body {
+    background-size: 240%;
+  }
+}
+
+@media (max-width: 499px) {
+  body {
+    background-size: 300%;
+  }
+}
