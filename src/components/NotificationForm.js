@@ -7,6 +7,12 @@ class NotificationForm extends React.Component {
     selectValue: 'Less than 25%'
   }
 
+  validateEmail = (email) => {
+    // eslint-disable-next-line
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email.toLowerCase());
+  }
+
   handleSelectChange = (e) => {
     this.setState({
       selectValue: e.target.value
@@ -21,7 +27,7 @@ class NotificationForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (!this.state.email.includes('@') || !this.state.email.includes('.com')) {
+    if (!this.validateEmail(this.state.email)) {
       alert('Please enter a valid email address')
     } else {
       alert(`Your email is ${this.state.email} and the percantage of texts that are meeting related is ${this.state.selectValue}.`)

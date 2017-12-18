@@ -79,7 +79,7 @@ form h1 {
 }
 
 input[type="text"] {
-  width: 500px;
+  width: 100%;
   height: 30px;
   font-size: 20px;
 }
@@ -113,4 +113,10 @@ select {
   float: right;
   margin-right: 32%;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  #x-icon {
+    margin-right: 60px;
+  }
 }
