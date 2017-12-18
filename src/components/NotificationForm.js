@@ -21,7 +21,11 @@ class NotificationForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Your email is ${this.state.email} and the percantage of texts that are meeting related is ${this.state.selectValue}.`)
+    if (!this.state.email.includes('@') || !this.state.email.includes('.com')) {
+      alert('Please enter a valid email address')
+    } else {
+      alert(`Your email is ${this.state.email} and the percantage of texts that are meeting related is ${this.state.selectValue}.`)
+    }
   }
 
   render () {

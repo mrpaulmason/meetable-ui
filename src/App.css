@@ -74,6 +74,10 @@ form {
   margin-top: 100px;
 }
 
+form h1 {
+  font-size: 40px;
+}
+
 input[type="text"] {
   width: 500px;
   height: 30px;
@@ -100,12 +104,13 @@ input[type="submit"] {
 }
 
 select {
-  width: 300px;
-  height: 40px;
-  font-size: 25px;
+  width: 160px;
+  height: 50px;
+  font-size: 20px;
 }
 
 #x-icon {
   float: right;
   margin-right: 32%;
+  cursor: pointer;
 }
