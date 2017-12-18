@@ -1,4 +1,5 @@
 import React from 'react';
+import NotificationForm from './NotificationForm'
 
 class LandingPage extends React.Component {
 
@@ -9,7 +10,7 @@ class LandingPage extends React.Component {
         <h1>Make plans faster. Meet up easier.</h1>
         <h2>AI guided meetups without all the texting</h2>
         <div>
-          
+          <NotificationForm/>
         </div>
       </div>
     )

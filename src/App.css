@@ -29,3 +29,27 @@ h1 {
 .landing-page h2 {
   margin: 35px;
 }
+
+span {
+  transition: background-color 170ms ease-in-out;
+}
+
+a {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: color 170ms ease-in-out, border-color 170ms ease-in-out;
+  padding: 10px;
+  text-decoration: none;
+  font-style: normal;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  line-height: 1em;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #fff;
+  color: black;
+}
