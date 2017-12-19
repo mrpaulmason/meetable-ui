@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LandingPage from './components/LandingPage'
 import './App.css';
+import LandingPage from './components/LandingPage';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path='/' component={LandingPage}/>
-        </div>
+        <Route exact path='/' component={LandingPage}/>
       </Router>
     );
   }

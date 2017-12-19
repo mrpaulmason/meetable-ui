@@ -1,5 +1,7 @@
 import React from 'react';
 import NotificationForm from './NotificationForm'
+import { connect } from 'react-redux';
+
 class LandingPage extends React.Component {
 
   state = {
@@ -11,6 +13,7 @@ class LandingPage extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     if (this.state.renderForm === false) {
       return (
         <div className='landing-page App'>
@@ -25,7 +28,7 @@ class LandingPage extends React.Component {
     } else {
       return (
         <div>
-        <NotificationForm handleClick={this.handleClick}/>
+          <NotificationForm handleClick={this.handleClick}/>
         </div>
       )
     }
@@ -33,4 +36,11 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    test: state.test
+  }
+}
+
+export default connect(mapStateToProps, null)(LandingPage)

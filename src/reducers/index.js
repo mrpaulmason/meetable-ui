@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import userReducer from './userReducer'
-
+import user from './user';
 
 const meetableApp = combineReducers({
-  userReducer
+  user: user
 })
 
 export default meetableApp
