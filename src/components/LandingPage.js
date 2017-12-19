@@ -1,6 +1,5 @@
 import React from 'react';
 import NotificationForm from './NotificationForm'
-import cancel from '../letter-x.png'
 class LandingPage extends React.Component {
 
   state = {
@@ -26,8 +25,7 @@ class LandingPage extends React.Component {
     } else {
       return (
         <div>
-        <img id="x-icon" src={cancel} alt="close" onClick={this.handleClick}/>
-        <NotificationForm/>
+        <NotificationForm handleClick={this.handleClick}/>
         </div>
       )
     }

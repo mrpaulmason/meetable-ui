@@ -1,4 +1,5 @@
 import React from 'react';
+import cancel from '../letter-x.png'
 
 class NotificationForm extends React.Component {
 
@@ -37,7 +38,9 @@ class NotificationForm extends React.Component {
   render () {
     return (
       <div>
+
         <form onSubmit={this.handleSubmit}>
+          <img id="x-icon" src={cancel} alt="close" onClick={this.props.handleClick}/>
           <h2>Private Beta Waitlist</h2>
           <h1>Email Address *</h1>
           <input type='text' onChange={this.handleInputChange}></input>
