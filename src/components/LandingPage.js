@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
     if (this.state.renderForm === false) {
       return (
         <div className='landing-page App'>
-          <h2>Meetable.AI</h2>
+          <h2>MEETABLE.AI</h2>
           <h1>Make plans faster. Meet up easier.</h1>
           <h2>AI guided meetups without all the texting</h2>
           <span>
