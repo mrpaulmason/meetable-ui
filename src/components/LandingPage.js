@@ -13,7 +13,7 @@ class LandingPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.location);
     if (this.state.renderForm === false) {
       return (
         <div className='landing-page App'>

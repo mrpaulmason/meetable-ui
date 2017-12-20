@@ -12,6 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 let store = createStore(meetableApp, composeWithDevTools(applyMiddleware(thunk)))
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>

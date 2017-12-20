@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import LandingPage from './components/LandingPage';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Invite from './components/Invite'
+import Test from './components/Test'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
+
   render() {
+    console.log(this.props);
     return (
-      <Router>
-        <Route exact path='/' component={LandingPage}/>
-      </Router>
+        <Switch>
+          <Route exact path='/' component={LandingPage}/>
+          <Route exact path='/test' component={Test}/>
+          <Route exact path='*' component={Invite}/>
+        </Switch>
     );
   }
 }
