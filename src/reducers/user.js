@@ -1,7 +1,7 @@
 const user = (state = {
   ref: '',
   phoneNumber: '',
-  postResults: {}
+  postResults: ''
 }, action) => {
   switch (action.type) {
     case 'SET_REF':
@@ -9,7 +9,11 @@ const user = (state = {
     case 'SET_PHONE_NUMBER':
       return {...state, phoneNumber: action.payload}
     case 'POST_RESULTS':
-      return {...state, postResults: action.payload.message}
+      if (action.payload === undefined) {
+        return {...state, postResults: 'invalid code'}
+      } else {
+        return {...state, postResults: action.payload.message}
+      }
     default: return state
   }
 }

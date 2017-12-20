@@ -22,8 +22,8 @@ class Invite extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (this.state.phoneNumber === '') {
-      alert('Please enter your phone number')
+    if (this.state.phoneNumber.length < 10) {
+      alert('Please enter a valid phone number')
     } else {
       this.setState({
         phoneNumber: ''
@@ -35,13 +35,15 @@ class Invite extends React.Component {
   }
 
   render() {
-    console.log(this.props.user);
+    if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
+      alert(this.props.user.postResults)
+    }
     return (
       <div className='invite'>
         <Navbar/>
         <form onSubmit={this.handleSubmit}>
           <h3>Phone Number</h3>
-          <input type='text' onChange={this.handleChange}></input>
+          <input type='text' value={this.state.phoneNumber} onChange={this.handleChange}></input>
           <input type='submit'></input>
         </form>
         <div className='footer'>

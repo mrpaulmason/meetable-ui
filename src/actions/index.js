@@ -1,18 +1,26 @@
 export function postRefAndPhoneNumber(ref, phoneNumber) {
-  var payload = {
+  let payload = {
     ref: ref,
     phone_number: phoneNumber
   };
 
-  var data = new FormData();
-  data.append( "json", JSON.stringify( payload ) );
+  let data = JSON.stringify(payload)
 
   return (dispatch) => {
     return fetch('https://meetable-api.herokuapp.com/sms/accept', {
       method: "POST",
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
       body: data
     })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        return alert('invalid code')
+      }
+      return res.json()
+    })
     .then(res => {
       dispatch({ type: 'POST_RESULTS', payload: res })
     })
