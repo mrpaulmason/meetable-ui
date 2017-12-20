@@ -44,7 +44,7 @@ class Invite extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h3>Phone Number</h3>
           <input type='text' value={this.state.phoneNumber} onChange={this.handleChange}></input>
-          <input type='submit'></input>
+          <input type='submit' value='Get Started'></input>
         </form>
         <div className='footer'>
         </div>
