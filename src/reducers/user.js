@@ -1,7 +1,11 @@
 const user = (state = {
-  phoneNumber: '12334567'
+  ref: '',
+  phoneNumber: '',
+  postResults: {}
 }, action) => {
   switch (action.type) {
+    case 'POST_RESULTS':
+      return {...state, postResults: action.payload}
     default: return state
   }
 }
