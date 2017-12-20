@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import Invite from './components/Invite'
-import Test from './components/Test'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -11,7 +10,6 @@ class App extends Component {
     return (
         <Switch>
           <Route exact path='/' component={LandingPage}/>
-          <Route exact path='/test' component={Test}/>
           <Route exact path='*' component={Invite}/>
         </Switch>
     )

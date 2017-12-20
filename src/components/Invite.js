@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { postRefAndPhoneNumber } from '../actions/index'
+import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index'
 
 class Invite extends React.Component {
 
@@ -28,11 +28,14 @@ class Invite extends React.Component {
       this.setState({
         phoneNumber: ''
       })
+      this.props.setRef(this.state.ref)
+      this.props.setPhoneNumber(this.state.phoneNumber)
       this.props.postRefAndPhoneNumber(this.state.ref, this.state.phoneNumber)
     }
   }
 
   render() {
+    console.log(this.props.user);
     return (
       <div className='invite'>
         <Navbar/>
@@ -56,7 +59,9 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    postRefAndPhoneNumber
+    postRefAndPhoneNumber,
+    setRef,
+    setPhoneNumber
   }, dispatch)
 }
 

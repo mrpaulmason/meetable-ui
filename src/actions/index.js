@@ -20,5 +20,13 @@ export function postRefAndPhoneNumber(ref, phoneNumber) {
 }
 
 export function setRef(ref) {
-  return dispatch(action: 'SET_REF', payload: ref)
+  return (dispatch) => {
+    dispatch({type: 'SET_REF', payload: ref})
+  }
+}
+
+export function setPhoneNumber(phoneNumber) {
+  return (dispatch) => {
+    dispatch({type: 'SET_PHONE_NUMBER', payload: phoneNumber})
+  }
 }

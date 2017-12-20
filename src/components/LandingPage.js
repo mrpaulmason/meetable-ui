@@ -38,8 +38,7 @@ class LandingPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    test: state.test
+    user: state.user
   }
 }
 
