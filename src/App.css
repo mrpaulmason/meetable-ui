@@ -149,7 +149,7 @@ select {
   margin-top: 150px;
 }
 
-.invite form, input {
+.invite form {
   font-family: 'Cormorant Garamond', serif;
   width: 70%;
 }
@@ -160,7 +160,7 @@ select {
   height: 40px;
   font-size: 14px;
   border-radius: 6px;
-
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .invite input[type="submit"]:hover {
