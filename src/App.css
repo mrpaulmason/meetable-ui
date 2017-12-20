@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+body {
+  background-image: url('./snazzy-image.png');
+}
+
+.nav {
+  background-color: #212121;
+  overflow: hidden;
+  padding: 25px;
+}
+
 h2 {
   font-weight: 600;
   font-style: normal;
@@ -128,6 +138,56 @@ select {
   float: right;
   cursor: pointer;
 }
+
+.invite {
+  background-color: #fff;
+  height: 100vh;
+  color: black;
+}
+
+.invite form {
+  margin-top: 150px;
+}
+
+.invite form, input {
+  font-family: 'Cormorant Garamond', serif;
+  width: 70%;
+}
+
+.invite input[type='submit'] {
+  background-color: #1E88E5;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 6px;
+
+}
+
+.invite input[type="submit"]:hover {
+  background-color: #1E88E5;
+  color: white;
+}
+
+.invite a {
+  border: none;
+  font-size: 18px;
+}
+
+.invite a:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #212121;
+  color: #fff;
+  height: 200px;
+}
+
 
 @media (max-width: 539px) {
 

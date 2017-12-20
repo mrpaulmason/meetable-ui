@@ -3,7 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import Invite from './components/Invite'
 import Test from './components/Test'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
           <Route exact path='/test' component={Test}/>
           <Route exact path='*' component={Invite}/>
         </Switch>
-    );
+    )
   }
 }
 
