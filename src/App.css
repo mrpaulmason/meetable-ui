@@ -81,7 +81,7 @@ img {
   cursor: pointer;
 }
 
-p {
+.waitlist-form p {
   font-weight: bold;
   font-style: normal;
   font-size: 15px;

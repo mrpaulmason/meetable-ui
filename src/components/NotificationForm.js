@@ -37,7 +37,7 @@ class NotificationForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='waitlist-form'>
         <form onSubmit={this.handleSubmit}>
           <img id="x-icon" src={cancel} alt="close" onClick={this.props.handleClick}/>
           <h2>Private Beta Waitlist</h2>
