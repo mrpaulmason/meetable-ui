@@ -139,6 +139,22 @@ select {
   cursor: pointer;
 }
 
+.terms-and-conditions  {
+  background-color: #fff;
+  text-align: center;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.terms-and-conditions h2, p {
+  color: black;
+}
+
+.terms-and-conditions div {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .invite {
   background-color: #fff;
   height: 100vh;
