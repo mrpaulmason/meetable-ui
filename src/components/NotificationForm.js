@@ -45,7 +45,6 @@ class NotificationForm extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     return (
       <div className='waitlist-form'>
         <form onSubmit={this.handleSubmit}>

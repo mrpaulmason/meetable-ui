@@ -35,9 +35,9 @@ export function setPhoneNumber(phoneNumber) {
 
 export function signup(email, survey) {
   let payload = {
-    "email": `${email}`,
-    "survey": {
-      "How much of your texting is about meeting up?": `${survey}`
+    email: email,
+    survey: {
+      "How much of your texting is about meeting up?": survey
     }
   }
 
@@ -54,7 +54,7 @@ export function signup(email, survey) {
     })
     .then(res => res.json())
     .then(res => {
-      dispatch({type: 'SIGNUP_POST_RESPNSE', payload})
+      dispatch({type: 'SIGNUP_POST_RESPNSE', payload: res})
     })
   }
 }
