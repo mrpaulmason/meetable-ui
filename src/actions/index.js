@@ -6,7 +6,7 @@ export function postRefAndPhoneNumber(ref, phoneNumber) {
   let data = JSON.stringify(payload)
 
   return (dispatch) => {
-    return fetch(`https://meetable-api.herokuapp.com/meetings/REF/accept?ref=${ref}`, {
+    return fetch(`https://meetable-api.herokuapp.com/meetings/${ref}/accept`, {
       method: "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',
