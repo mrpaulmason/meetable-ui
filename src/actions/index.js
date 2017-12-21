@@ -54,6 +54,7 @@ export function signup(email, survey) {
     })
     .then(res => res.json())
     .then(res => {
+      alert(res.message)
       dispatch({type: 'SIGNUP_POST_RESPNSE', payload: res})
     })
   }

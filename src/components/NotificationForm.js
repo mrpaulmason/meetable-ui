@@ -70,8 +70,7 @@ class NotificationForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    signupResponse: state.signup,
-    user: state.user
+    signup: state.signup
   }
 }
 
