@@ -1,6 +1,5 @@
 import React from 'react';
 import NotificationForm from './NotificationForm'
-import { connect } from 'react-redux';
 
 class LandingPage extends React.Component {
 
@@ -35,10 +34,4 @@ class LandingPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  }
-}
-
-export default connect(mapStateToProps, null)(LandingPage)
+export default LandingPage

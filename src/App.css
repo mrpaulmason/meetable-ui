@@ -154,6 +154,10 @@ select {
   width: 70%;
 }
 
+.invite input[type='text'] {
+  font-family: 'Cormorant Garamond', serif;
+}
+
 .invite input[type='submit'] {
   background-color: #1E88E5;
   width: 140px;

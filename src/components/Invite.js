@@ -13,14 +13,14 @@ class Invite extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      phoneNumber: phoneNumber
+      phoneNumber: e.target.value
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
     // remove all non-numbers from input value
-    let phoneNumber = e.target.value.replace(/\D/g,'');
+    let phoneNumber = this.state.phoneNumber.replace(/\D/g,'');
 
     if (phoneNumber.length < 10) {
       alert('Please enter a valid phone number')
@@ -35,6 +35,7 @@ class Invite extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
       alert(this.props.user.postResults)
     }
