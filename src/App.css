@@ -177,9 +177,18 @@ select {
   font-size: 18px;
 }
 
+.invite input[type='checkbox'] {
+  margin-top: 30px;
+}
+
 .invite a:hover {
   background-color: transparent;
   color: #fff;
+}
+
+#terms-header {
+  display: inline;
+  margin-left: 12px;
 }
 
 .footer {
@@ -192,6 +201,11 @@ select {
   height: 200px;
 }
 
+#terms-link {
+  color: black;
+  font-size: 16px;
+  text-decoration: underline;
+}
 
 @media (max-width: 539px) {
 

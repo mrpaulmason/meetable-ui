@@ -45,6 +45,9 @@ class Invite extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h3>Phone Number</h3>
           <input type='text' value={this.state.phoneNumber} onChange={this.handleChange}></input>
+          <input type='checkbox'></input>
+          <h3 id='terms-header'>I have read and agree to the<a href='/privacy' id='terms-link' target="_blank">Terms and Conditions</a></h3>
+          <br/>
           <input type='submit' value='Get Started'></input>
         </form>
         <div className='footer'>
