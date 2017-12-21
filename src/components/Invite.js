@@ -40,6 +40,8 @@ class Invite extends React.Component {
 
     if (!this.validatePhoneNumber(this.state.phoneNumber)) {
       alert('Please enter a valid phone number')
+    } else if (!this.state.termsAccepted) {
+      alert('You must accept the Terms and Conditions')
     } else {
       this.setState({
         phoneNumber: ''
@@ -51,7 +53,6 @@ class Invite extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
       alert(this.props.user.postResults)
     }
