@@ -1,11 +1,14 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { signup } from '../actions/index'
+import { connect } from 'react-redux'
 import cancel from '../letter-x.png'
 
 class NotificationForm extends React.Component {
 
   state = {
     email: '',
-    selectValue: 'Less than 25%'
+    survey: 'Less than 25%'
   }
 
   validateEmail = (email) => {
@@ -14,9 +17,9 @@ class NotificationForm extends React.Component {
     return re.test(email.toLowerCase());
   }
 
-  handleSelectChange = (e) => {
+  handleSurveyChange = (e) => {
     this.setState({
-      selectValue: e.target.value
+      survey: e.target.value
     })
   }
 
@@ -29,23 +32,30 @@ class NotificationForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (!this.validateEmail(this.state.email)) {
+      this.setState({
+        email: ''
+      })
       alert('Please enter a valid email address')
     } else {
-      alert(`Your email is ${this.state.email} and the percantage of texts that are meeting related is ${this.state.selectValue}.`)
+      this.props.signup(this.state.email, this.state.survey)
+      this.setState({
+        email: ''
+      })
     }
   }
 
   render () {
+    console.log(this.props);
     return (
       <div className='waitlist-form'>
         <form onSubmit={this.handleSubmit}>
           <img id="x-icon" src={cancel} alt="close" onClick={this.props.handleClick}/>
           <h2>Private Beta Waitlist</h2>
           <h1>Email Address *</h1>
-          <input type='text' onChange={this.handleInputChange}></input>
+          <input type='text' value={this.state.email} onChange={this.handleInputChange}></input>
           <h1>Select</h1>
           <p>How much of your texting is about meeting up?</p>
-          <select onChange={this.handleSelectChange}>
+          <select onChange={this.handleSurveyChange}>
             <option value='Less than 25%'>Less than 25%</option>
             <option value='25-50%'>25-50%</option>
             <option value='50-75%'>50-75%</option>
@@ -59,4 +69,17 @@ class NotificationForm extends React.Component {
   }
 }
 
-export default NotificationForm
+const mapStateToProps = (state) => {
+  return {
+    signupResponse: state.signup,
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    signup
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationForm)

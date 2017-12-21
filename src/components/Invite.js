@@ -43,12 +43,12 @@ class Invite extends React.Component {
     } else if (!this.state.termsAccepted) {
       alert('You must accept the Terms and Conditions')
     } else {
-      this.setState({
-        phoneNumber: ''
-      })
       this.props.setRef(this.state.ref)
       this.props.setPhoneNumber(this.state.phoneNumber)
       this.props.postRefAndPhoneNumber(this.state.ref, this.state.phoneNumber)
+      this.setState({
+        phoneNumber: ''
+      })
     }
   }
 

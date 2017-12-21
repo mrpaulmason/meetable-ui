@@ -32,3 +32,29 @@ export function setPhoneNumber(phoneNumber) {
     dispatch({type: 'SET_PHONE_NUMBER', payload: phoneNumber})
   }
 }
+
+export function signup(email, survey) {
+  let payload = {
+    "email": `${email}`,
+    "survey": {
+      "How much of your texting is about meeting up?": `${survey}`
+    }
+  }
+
+  let data = JSON.stringify(payload)
+
+  return (dispatch) => {
+    return fetch("https://meetable-api.herokuapp.com/waitlist", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: data
+    })
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type: 'SIGNUP_POST_RESPNSE', payload})
+    })
+  }
+}
