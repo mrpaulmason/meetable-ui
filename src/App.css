@@ -222,6 +222,20 @@ select {
   text-decoration: underline;
 }
 
+.map-container {
+  background-color: #fff;
+  height: 100vh;
+  color: black;
+}
+
+.map {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  margin-left: 15%;
+  margin-top: 100px;
+}
+
 @media (max-width: 539px) {
 
   input[type='text'] {
