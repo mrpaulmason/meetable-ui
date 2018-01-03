@@ -17,7 +17,7 @@ h2 {
   font-style: normal;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: .10em;
+  letter-spacing: 0.1em;
   line-height: 1em;
   color: #fff;
 }
@@ -27,7 +27,7 @@ h1 {
   font-style: normal;
   font-size: 60px;
   text-transform: uppercase;
-  letter-spacing: .0em;
+  letter-spacing: 0em;
   line-height: 1em;
   color: #fff;
   margin-bottom: 50px;
@@ -65,13 +65,13 @@ a {
   font-style: normal;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   line-height: 1em;
   cursor: pointer;
-
 }
 
-a:hover, input[type="submit"]:hover {
+a:hover,
+input[type='submit']:hover {
   background-color: #fff;
   color: black;
 }
@@ -85,7 +85,7 @@ img {
   font-style: normal;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   line-height: 1em;
   color: #fff;
 }
@@ -102,13 +102,13 @@ form h1 {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+input[type='text'] {
   width: 100%;
   height: 30px;
   font-size: 20px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   width: 120px;
   height: 45px;
   background-color: transparent;
@@ -120,7 +120,7 @@ input[type="submit"] {
   font-style: normal;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   line-height: 1em;
   cursor: pointer;
   margin-top: 40px;
@@ -138,14 +138,15 @@ select {
   cursor: pointer;
 }
 
-.terms-and-conditions  {
+.terms-and-conditions {
   background-color: #fff;
   text-align: center;
   height: 100%;
   padding-top: 10px;
 }
 
-.terms-and-conditions h2, p {
+.terms-and-conditions h2,
+p {
   color: black;
 }
 
@@ -174,7 +175,7 @@ select {
 }
 
 .invite input[type='submit'] {
-  background-color: #1E88E5;
+  background-color: #1e88e5;
   width: 140px;
   height: 40px;
   font-size: 14px;
@@ -182,8 +183,8 @@ select {
   font-family: 'Cormorant Garamond', serif;
 }
 
-.invite input[type="submit"]:hover {
-  background-color: #1E88E5;
+.invite input[type='submit']:hover {
+  background-color: #1e88e5;
   color: white;
 }
 
@@ -231,13 +232,20 @@ select {
 .map {
   position: absolute;
   width: 70%;
-  height: 70%;
+  height: 60%;
   margin-left: 15%;
-  margin-top: 100px;
+  margin-top: 10px;
+}
+
+iframe {
+  border: none;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 @media (max-width: 539px) {
-
   input[type='text'] {
     width: 90%;
   }
