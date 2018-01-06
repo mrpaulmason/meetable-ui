@@ -51,14 +51,9 @@ class Invite extends React.Component {
   };
 
   render() {
-    let style = {
-      backgroundColor: '#663399'
-    };
-
-    //
-    // if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
-    //   alert(this.props.user.postResults);
-    // }
+    if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
+      alert(this.props.user.postResults);
+    }
     return (
       <div className="invite">
         <h1 id="logo-box">M</h1>
@@ -66,7 +61,7 @@ class Invite extends React.Component {
         <p>AI for meeting up with work peeps</p>
         <form>
           <input type="text" placeholder="Default text (e.g., Enter number)" onChange={this.handleChange} />
-          <div className="inline-field">
+          <div className="inline-input">
             <input type="checkbox" onClick={this.handleCheckbox} />
             <label>
               I accept the{' '}
