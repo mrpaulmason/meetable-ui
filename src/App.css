@@ -160,7 +160,7 @@ p {
 .invite {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  width: 40%;
+  width: 35%;
   margin: 0 auto;
 }
 
@@ -182,13 +182,19 @@ p {
 }
 
 input {
-  width: 80%;
+  width: 492px;
   border: 2px solid #fff;
   border-radius: 22px;
   font-size: 20px;
   color: #999999;
   line-height: 40px;
   margin-top: 40px;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #999999;
+  opacity: 1 !important;
 }
 
 input[type='checkbox'] {
@@ -214,6 +220,7 @@ a {
   text-align: center;
   position: fixed;
   left: 0;
+  right: 0;
   bottom: 40px;
   width: 100%;
 }
@@ -235,38 +242,197 @@ a {
   border-color: #fff;
   border-width: 4px;
   line-height: 54px;
-  width: 10%;
+  width: 53px;
   text-align: center;
   padding: 5px;
   font-weight: 400;
   font-size: 2.7em;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 1411px) {
   .invite {
-    width: 90%;
+    width: 38%;
   }
 
-  #logo-box {
-    width: 15%;
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1299px) {
+  .invite {
+    width: 40%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1234px) {
+  .invite {
+    width: 43%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1149px) {
+  .invite {
+    width: 45%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1097px) {
+  .invite {
+    width: 47%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .invite {
+    width: 49%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 1007px) {
+  .invite {
+    width: 51%;
+  }
+
+  input {
+    width: 492px;
+  }
+}
+
+@media (max-width: 968px) {
+  .invite {
+    width: 53%;
+  }
+
+  input {
+    width: 415px;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 965px) {
+  .invite {
+    width: 45%;
+  }
+}
+
+@media (max-width: 913px) {
+  .invite {
+    width: 47%;
+  }
+}
+
+@media (max-width: 874px) {
+  .invite {
+    width: 49%;
+  }
+}
+
+@media (max-width: 839px) {
+  .invite {
+    width: 52%;
+  }
+}
+
+@media (max-width: 785px) {
+  .invite {
+    width: 55%;
+  }
+}
+
+@media (max-width: 748px) {
+  .invite {
+    width: 59%;
+  }
+}
+
+@media (max-width: 700px) {
+  .invite {
+    width: 72%;
+  }
+}
+
+@media (max-width: 570px) {
+  .invite {
+    width: 75%;
+  }
+}
+
+@media (max-width: 551px) {
+  .invite {
+    width: 80%;
+  }
+
+  input {
+    width: 405px;
+  }
+}
+
+@media (max-width: 514px) {
+  .invite {
+    width: 70%;
   }
 
   p {
     font-size: 1.2em;
-    /* font-weight: 300; */
   }
 
   input {
-    width: 100%;
+    width: 330px;
   }
 
   h1 {
-    font-size: 4.3em;
+    font-size: 3.2em;
     font-weight: 400;
     margin-top: 80px;
     margin-bottom: 0;
   }
 }
+
+@media (max-width: 470px) {
+  .invite {
+    width: 75%;
+  }
+}
+
+@media (max-width: 437px) {
+  .invite {
+    width: 83%;
+  }
+
+  input {
+    width: 325px;
+  }
+}
+
+/* @media (max-width: 1024px) {
+  .invite {
+    width: 60%;
+  }
+} */
 
 /* .invite form {
 }
