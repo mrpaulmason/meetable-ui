@@ -58,7 +58,9 @@ class Invite extends React.Component {
     return (
       <div className="invite">
         <h1 id="logo-box">M</h1>
-        <h1>Meetable</h1>
+        <h1>
+          M<span>ee</span>table
+        </h1>
         <p>AI for meeting up with work peeps</p>
         <form>
           <input type="text" placeholder="Default text (e.g., Enter number)" onChange={this.handleChange} />

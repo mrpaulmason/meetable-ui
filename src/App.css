@@ -171,6 +171,10 @@ h1 {
   margin-bottom: 0;
 }
 
+span {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
 p {
   font-size: 1.8em;
   font-weight: 300;
@@ -238,7 +242,7 @@ a {
   font-size: 2.7em;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 415px) {
   .invite {
     width: 90%;
   }
@@ -249,10 +253,18 @@ a {
 
   p {
     font-size: 1.2em;
+    /* font-weight: 300; */
   }
 
   input {
     width: 100%;
+  }
+
+  h1 {
+    font-size: 4.3em;
+    font-weight: 400;
+    margin-top: 80px;
+    margin-bottom: 0;
   }
 }
 
