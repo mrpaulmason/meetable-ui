@@ -238,6 +238,24 @@ a {
   font-size: 2.7em;
 }
 
+@media (max-width: 412px) {
+  .invite {
+    width: 90%;
+  }
+
+  #logo-box {
+    width: 15%;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
 /* .invite form {
 }
 
