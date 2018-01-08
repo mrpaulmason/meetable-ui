@@ -207,13 +207,22 @@ a {
 }
 
 .copyright {
-  font-size: 1em;
   text-align: center;
   position: fixed;
   left: 0;
   bottom: 40px;
   width: 100%;
-  text-align: center;
+}
+
+.copyright p {
+  font-size: 1em;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.copyright img {
+  width: 12px;
+  height: 12px;
 }
 
 #logo-box {

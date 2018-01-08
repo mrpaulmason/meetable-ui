@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
+import '../copyright-symbol.png';
 
 class Invite extends React.Component {
   state = {
@@ -71,8 +72,9 @@ class Invite extends React.Component {
             </label>
           </div>
         </form>
-        <div>
-          <p className="copyright">2018 Meetable</p>
+        <div className="copyright">
+          <img src={require('../copyright-symbol.png')} alt="copyright logo" />
+          <p>2018 Meetable</p>
         </div>
       </div>
     );
