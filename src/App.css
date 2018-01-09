@@ -428,6 +428,16 @@ a {
   }
 }
 
+@media (max-width: 375px) {
+  .invite {
+    width: 92%;
+  }
+
+  input {
+    width: 325px;
+  }
+}
+
 /* @media (max-width: 1024px) {
   .invite {
     width: 60%;
