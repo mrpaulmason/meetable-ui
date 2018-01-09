@@ -3,7 +3,7 @@
 }
 
 body {
-  background: linear-gradient(#5964d5, #59c1ee) fixed;
+  background: linear-gradient(#5964d5, #59c1ee 90%) fixed;
 }
 
 .nav {
@@ -166,13 +166,14 @@ p {
 
 h1 {
   font-size: 4.3em;
-  font-weight: 400;
-  margin-top: 80px;
+  font-weight: 500;
+  margin-top: 65px;
   margin-bottom: 0;
 }
 
 span {
   font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
 }
 
 p {
@@ -189,6 +190,7 @@ input {
   color: #999999;
   line-height: 40px;
   margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 ::-webkit-input-placeholder {
@@ -242,7 +244,7 @@ a {
   border-color: #fff;
   border-width: 4px;
   line-height: 54px;
-  width: 53px;
+  width: 55px;
   text-align: center;
   padding: 5px;
   font-weight: 400;

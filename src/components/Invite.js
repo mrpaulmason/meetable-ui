@@ -63,7 +63,7 @@ class Invite extends React.Component {
         </h1>
         <p>AI for meeting up with work peeps</p>
         <form>
-          <input type="text" placeholder="  Default text (e.g., Enter number)" onChange={this.handleChange} />
+          <input type="text" placeholder="Default text (e.g., Enter number)" onChange={this.handleChange} />
           <div className="inline-input">
             <input type="checkbox" onClick={this.handleCheckbox} />
             <label>
