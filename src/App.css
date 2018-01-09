@@ -402,14 +402,17 @@ a {
     font-size: 1.2em;
   }
 
-  input {
+  input[type='text'] {
     width: 330px;
+    margin-top: 80px;
+    height: 32px;
+    font-size: 1em;
   }
 
   h1 {
     font-size: 3.2em;
-    font-weight: 400;
-    margin-top: 80px;
+    font-weight: 500;
+    margin-top: 50px;
     margin-bottom: 0;
   }
 }
