@@ -171,6 +171,13 @@ h1 {
   margin-bottom: 0;
 }
 
+.typed-text span {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
 span {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
@@ -180,6 +187,8 @@ p {
   font-size: 1.8em;
   font-weight: 300;
   margin-top: 5px;
+  width: 7%;
+  display: inline-block;
 }
 
 input {
@@ -229,8 +238,8 @@ a {
 
 .copyright p {
   font-size: 1em;
-  display: inline-block;
   margin-left: 5px;
+  width: 115px;
 }
 
 .copyright img {
@@ -330,7 +339,8 @@ a {
     width: 415px;
   }
 
-  p {
+  p,
+  .typed-text span {
     font-size: 1.5em;
   }
 }
@@ -398,7 +408,8 @@ a {
     width: 70%;
   }
 
-  p {
+  p,
+  .typed-text span {
     font-size: 1.2em;
   }
 

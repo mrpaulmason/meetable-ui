@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
+import Typed from 'react-typed';
 import '../copyright-symbol.png';
 
 class Invite extends React.Component {
@@ -61,7 +62,15 @@ class Invite extends React.Component {
         <h1>
           M<span>ee</span>tabl<span>e</span>
         </h1>
-        <p>AI for meeting up with work peeps</p>
+        <div>
+          <p>AI</p>
+          <Typed
+            className="typed-text"
+            strings={['for meeting IRL', 'for meeting up with friends', 'for planning first dates', 'for making work coffees happen', 'for meeting IRL']}
+            typeSpeed={80}
+            loop
+          />
+        </div>
         <form>
           <input type="text" placeholder="Default text (e.g., Enter number)" onChange={this.handleChange} />
           <div className="inline-input">
