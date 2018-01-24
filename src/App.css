@@ -155,11 +155,14 @@ p {
   width: 80%;
 } */
 
+/* Map Component */
+
 /* Invite Component */
 
 .invite {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
   width: 35%;
   margin: 0 auto;
 }
@@ -178,7 +181,7 @@ h1 {
   font-weight: 300;
 }
 
-span {
+.invite div:nth-child(2) {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
 }

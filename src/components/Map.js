@@ -9,6 +9,7 @@ export default class Map extends React.Component {
   render() {
     return (
       <GoogleMap
+        className="map"
         onClick={this._onClick}
         style={{}}
         options={{}}
@@ -16,7 +17,7 @@ export default class Map extends React.Component {
           key: 'AIzaSyCkPQJH0W9Z-P5GiO-YGQFDUAHvJlh2CcE'
         }}
         layerTypes={['TransitLayer']}
-        defaultCenter={{ lat: 40.739701, lng: -73.9896538 }}
+        defaultCenter={{ lat: 40.7260377, lng: -73.9931798 }}
         defaultZoom={14}>
         <AnyReactComponent lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />
         <AnyReactComponent lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
