@@ -1,29 +1,26 @@
 import React from 'react';
-import mapboxgl from 'mapbox-gl';
+import GoogleMap from 'google-map-react';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoianR5bmVyYnJ5YW4iLCJhIjoiY2piaTQ1cWdhMXR1MDM0cXd0OHNnbWV6eiJ9.dRUmFyjWhDnI_EnqUxNMfw';
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class Map extends React.Component {
-  // componentDidMount() {
-  //   this.map = new mapboxgl.Map({
-  //     container: this.mapContainer,
-  //     style: 'mapbox://styles/mapbox/streets-v9',
-  //     center: [-73.9923, 40.735],
-  //     zoom: 12.0
-  //   });
-  // }
-  //
-  // componentWillUnmount() {
-  //   this.map.remove();
-  // }
+export default class Map extends React.Component {
+  _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
 
   render() {
     return (
-      <div>
-        <iframe title="google map" src="https://www.google.com/maps/d/embed?mid=1LFdD2Ort1ausi0gK7tSUPTFQOOHdd-DP" width="800" height="650" />
-      </div>
+      <GoogleMap
+        onClick={this._onClick}
+        style={{}}
+        options={{}}
+        bootstrapURLKeys={{
+          key: 'AIzaSyCkPQJH0W9Z-P5GiO-YGQFDUAHvJlh2CcE'
+        }}
+        layerTypes={['TransitLayer']}
+        defaultCenter={{ lat: 40.739701, lng: -73.9896538 }}
+        defaultZoom={14}>
+        <AnyReactComponent lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />
+        <AnyReactComponent lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
+      </GoogleMap>
     );
   }
 }
-
-export default Map;
