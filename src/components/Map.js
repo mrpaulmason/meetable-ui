@@ -18,7 +18,7 @@ export default class Map extends React.Component {
         }}
         layerTypes={['TransitLayer']}
         defaultCenter={{ lat: 40.7260377, lng: -73.9931798 }}
-        defaultZoom={14}>
+        defaultZoom={13}>
         <AnyReactComponent lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />
         <AnyReactComponent lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
       </GoogleMap>
