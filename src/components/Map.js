@@ -4,9 +4,22 @@ import GoogleMap from 'google-map-react';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default class Map extends React.Component {
+  state = {
+    places: []
+  };
+
+  componentDidMount() {
+    fetch(`https:meetable-api.herokuapp.com/meetings/e20430/locations`)
+    .then(res => res.json())
+    .then(res => this.setState({
+      places: res
+    }))
+  }
+
   _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
 
   render() {
+    console.log(this.state.places);
     return (
       <GoogleMap
         className="map"

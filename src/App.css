@@ -167,9 +167,14 @@ p {
   margin: 0 auto;
 }
 
+.invite h1 span {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
 h1 {
+  letter-spacing: -4px;
   font-size: 4.3em;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 65px;
   margin-bottom: 0;
 }

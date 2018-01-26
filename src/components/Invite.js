@@ -60,7 +60,7 @@ class Invite extends React.Component {
       <div className="invite">
         <h1 id="logo-box">M</h1>
         <h1>
-          Mee<span>tabl</span>e
+          Meet<span>a</span>ble
         </h1>
         <div>
           <p>AI</p>
