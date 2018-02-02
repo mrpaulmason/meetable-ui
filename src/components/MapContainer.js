@@ -14,7 +14,6 @@ class MapContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <Map children={this.props.map.places}/>
