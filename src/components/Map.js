@@ -5,25 +5,13 @@ import PlaceWithHover from './PlaceWithHover';
 // import {K_SIZE} from './HoverStyles';
 
 export default class Map extends React.Component {
-  state = {
-    places: []
-  };
-
-  componentDidMount() {
-    fetch(`https:meetable-api.herokuapp.com/meetings/e20430/locations`)
-    .then(res => res.json())
-    .then(res => this.setState({
-      places: res
-    }))
-  }
 
   _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
 
   render() {
-    let children = [
-      <PlaceWithHover key={'1'} lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />,
-      <PlaceWithHover key={'2'} lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
-    ]
+    let children = this.props.children.map((place, index) => {
+      return <PlaceWithHover key={index} lat={place.latitude} lng={place.longitude} text={place.name} />
+    });
     return (
       <GoogleMap
         className="map"
@@ -38,6 +26,6 @@ export default class Map extends React.Component {
         defaultZoom={13}>
         {children}
       </GoogleMap>
-      )
-    }
+    )
+  } 
 }

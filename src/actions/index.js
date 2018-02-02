@@ -59,3 +59,13 @@ export function signup(email, survey) {
     })
   }
 }
+
+export function addPlaces() {
+  return (dispatch) => {
+    return fetch(`http://meetable-api.herokuapp.com/meetings/e20430/locations?category=coffee`)
+    .then(res => res.json())
+    .then(res => {
+      dispatch({type: 'ADD_PLACES', payload: res.locations})
+    })
+  }
+}
