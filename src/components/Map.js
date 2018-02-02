@@ -1,7 +1,8 @@
 import React from 'react';
 import GoogleMap from 'google-map-react';
+import PlaceWithHover from './PlaceWithHover';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// import {K_SIZE} from './HoverStyles';
 
 export default class Map extends React.Component {
   state = {
@@ -19,7 +20,10 @@ export default class Map extends React.Component {
   _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
 
   render() {
-    console.log(this.state.places);
+    let children = [
+      <PlaceWithHover key={'1'} lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />,
+      <PlaceWithHover key={'2'} lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
+    ]
     return (
       <GoogleMap
         className="map"
@@ -32,9 +36,8 @@ export default class Map extends React.Component {
         layerTypes={['TransitLayer']}
         defaultCenter={{ lat: 40.7260377, lng: -73.9931798 }}
         defaultZoom={13}>
-        <AnyReactComponent lat={40.7421726} lng={-74.0050918} text={'Chelsea Market'} />
-        <AnyReactComponent lat={40.7300109} lng={-73.9995557} text={'Third Rail Coffee'} />
+        {children}
       </GoogleMap>
-    );
-  }
+      )
+    }
 }
