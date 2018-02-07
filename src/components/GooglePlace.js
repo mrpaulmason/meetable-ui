@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import ClickedGooglePlace from './ClickedGooglePlace';
 const K_SIZE = 35;
-const greatPlaceStyle = {
+const defaultStyle = {
   position: 'absolute',
   width: K_SIZE,
   height: K_SIZE,
@@ -24,19 +25,34 @@ export default class GooglePlace extends Component {
     clicked: false
   }
 
-  handleClick = (props) => {
-    console.log(props);
+  handleClick = () => {
+    if (!this.state.clicked) {
+      this.setState({
+        clicked: true
+      });
+    } else {
+      this.setState({
+        clicked: false
+      });
+    }
   }
 
   render() {
-    const style = greatPlaceStyle;
-
     if (!this.state.clicked) {
       return (
-         <div style={style} onClick={() => this.handleClick(this.props)}>
+         <div style={defaultStyle} onClick={this.handleClick}>
             {this.props.name}
          </div>
       );
+    } else {
+      return (
+        <ClickedGooglePlace
+          lat={this.props.lat}
+          lng={this.props.lng}
+          name={this.props.name}
+          handleClick={this.handleClick}
+        />
+      )
     }
 
 
