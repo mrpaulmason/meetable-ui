@@ -52,6 +52,7 @@ export default class GooglePlace extends Component {
           name={this.props.name}
           address={this.props.address}
           handleClick={this.handleClick}
+          id={this.props.googleId}
         />
       )
     }
