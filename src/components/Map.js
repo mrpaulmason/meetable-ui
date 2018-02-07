@@ -10,10 +10,21 @@ export default class Map extends React.Component {
 
   render() {
     let children = this.props.children.map((place, index) => {
-      return <PlaceWithHover key={index} lat={place.latitude} lng={place.longitude} text={place.name} />
+      return (
+        <PlaceWithHover
+          key={index}
+          address={place.address}
+          attributes={place.attributes}
+          categories={place.categories}
+          googleId = {place.google_id}
+          lat={place.latitude}
+          lng={place.longitude}
+          name={place.name}
+        />
+      )
     });
     return (
-      <GoogleMap
+        <GoogleMap
         className="map"
         onClick={this._onClick}
         style={{}}
@@ -23,7 +34,7 @@ export default class Map extends React.Component {
         }}
         layerTypes={['TransitLayer']}
         defaultCenter={{ lat: 40.7260377, lng: -73.9931798 }}
-        defaultZoom={13}>
+        defaultZoom={14}>
         {children}
       </GoogleMap>
     )
