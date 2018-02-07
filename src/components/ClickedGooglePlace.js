@@ -38,7 +38,6 @@ class ClickedGooglePlace extends React.Component {
 
   render() {
     const url = `https://www.google.com/maps/place/?q=place_id:${this.props.id}`
-    console.log(this.props);
     return (
       <div style={style} onClick={this.props.handleClick}>
         <h3>{this.props.name}</h3>
