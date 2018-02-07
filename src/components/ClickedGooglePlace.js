@@ -23,7 +23,7 @@ class ClickedGooglePlace extends React.Component {
     const url = `https://google.com/maps/place/${this.props.name.split(' ').join('+')}/@${this.props.lat},${this.props.lng},17z/`
     return (
       <div style={style} onClick={this.props.handleClick}>
-        <a href={url} target='_blank' style={{color: 'black', textDecoration: 'none'}}>View On Google Maps</a>
+        <a href={url} style={{color: 'black', textDecoration: 'none'}}>View On Google Maps</a>
       </div>
     )
   }
