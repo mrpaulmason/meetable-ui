@@ -1,20 +1,20 @@
 import React from 'react';
-const K_SIZE = 50;
+const K_SIZE = 80;
 const style = {
   position: 'absolute',
-  width: 100,
+  width: 200,
   height: K_SIZE,
   left: -K_SIZE / 2,
   top: -K_SIZE / 2,
   border: 'none',
   borderRadius: 4,
   backgroundColor: 'white',
-  textAlign: 'center',
   color: 'black',
-  fontSize: 11,
+  fontWeight: 300,
+  fontSize: 9,
   fontFamily: 'Arial',
   padding: 4,
-  cursor: 'pointer',
+  cursor: 'default'
 }
 
 class ClickedGooglePlace extends React.Component {
@@ -23,7 +23,9 @@ class ClickedGooglePlace extends React.Component {
     const url = `https://google.com/maps/place/${this.props.name.split(' ').join('+')}/@${this.props.lat},${this.props.lng},17z/`
     return (
       <div style={style} onClick={this.props.handleClick}>
-        <a href={url} style={{color: 'black', textDecoration: 'none'}}>View On Google Maps</a>
+        <h3>{this.props.name}</h3>
+        <h3>{this.props.address}</h3>
+        <a href={url} style={{color: '#427fed', textDecoration: 'none', fontSize: '1.5em', cursor: 'pointer'}}>View on Google Maps</a>
       </div>
     )
   }
