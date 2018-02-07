@@ -1,17 +1,17 @@
 import React from 'react';
 import GoogleMap from 'google-map-react';
-import PlaceWithHover from './PlaceWithHover';
+import GooglePlace from './GooglePlace';
 
 // import {K_SIZE} from './HoverStyles';
 
 export default class Map extends React.Component {
 
-  _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
+  // _onClick = ({ x, y, lat, lng, event }) => console.log(x, y, lat, lng, event);
 
   render() {
     let children = this.props.children.map((place, index) => {
       return (
-        <PlaceWithHover
+        <GooglePlace
           key={index}
           address={place.address}
           attributes={place.attributes}
