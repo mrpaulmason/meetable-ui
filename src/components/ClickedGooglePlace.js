@@ -19,6 +19,23 @@ const style = {
 
 class ClickedGooglePlace extends React.Component {
 
+  state = {
+    placeDetails: [],
+    proxyURL: 'https://cors-anywhere.herokuapp.com/',
+    url: 'https://maps.googleapis.com/maps/api/place/details/json?'
+  }
+
+  componentDidMount() {
+    fetch(`${this.state.proxyURL}${this.state.url}?placeid=${this.props.id}&key=AIzaSyAJXZd8504OfrLpzMQAZRoz89Ix1b3p2dg`, {
+      method: "GET",
+      headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials':true,
+        'Access-Control-Allow-Methods':'POST, GET'
+      }
+    }).then(res => res.json()).then(res => console.log(res.url))
+  }
+
   render() {
     const url = `https://www.google.com/maps/place/?q=place_id:${this.props.id}`
     console.log(this.props);
