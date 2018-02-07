@@ -57,7 +57,7 @@ class LandingPage extends React.Component {
       alert(this.props.user.postResults);
     }
     return (
-      <div className="invite">
+      <div className="landing-page">
         <h1 id="logo-box">M</h1>
         <h1>
           Meet<span>a</span>ble

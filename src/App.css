@@ -159,7 +159,7 @@ p {
 
 /* Invite Component */
 
-.invite {
+.landing-page {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
@@ -167,7 +167,7 @@ p {
   margin: 0 auto;
 }
 
-.invite h1 span {
+.landing-page h1 span {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -186,7 +186,7 @@ h1 {
   font-weight: 300;
 }
 
-.invite div:nth-child(2) {
+.landing-page div:nth-child(2) {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
 }
@@ -263,13 +263,14 @@ a {
   line-height: 54px;
   width: 55px;
   text-align: center;
-  padding: 5px;
+  padding: 4px;
+  padding-right: 7px;
   font-weight: 400;
   font-size: 2.7em;
 }
 
 @media (max-width: 1411px) {
-  .invite {
+  .landing-page {
     width: 38%;
   }
 
@@ -279,7 +280,7 @@ a {
 }
 
 @media (max-width: 1299px) {
-  .invite {
+  .landing-page {
     width: 40%;
   }
 
@@ -289,7 +290,7 @@ a {
 }
 
 @media (max-width: 1234px) {
-  .invite {
+  .landing-page {
     width: 43%;
   }
 
@@ -299,7 +300,7 @@ a {
 }
 
 @media (max-width: 1149px) {
-  .invite {
+  .landing-page {
     width: 45%;
   }
 
@@ -309,7 +310,7 @@ a {
 }
 
 @media (max-width: 1097px) {
-  .invite {
+  .landing-page {
     width: 47%;
   }
 
@@ -319,7 +320,7 @@ a {
 }
 
 @media (max-width: 1050px) {
-  .invite {
+  .landing-page {
     width: 49%;
   }
 
@@ -329,7 +330,7 @@ a {
 }
 
 @media (max-width: 1007px) {
-  .invite {
+  .landing-page {
     width: 51%;
   }
 
@@ -339,7 +340,7 @@ a {
 }
 
 @media (max-width: 968px) {
-  .invite {
+  .landing-page {
     width: 53%;
   }
 
@@ -354,55 +355,55 @@ a {
 }
 
 @media (max-width: 965px) {
-  .invite {
+  .landing-page {
     width: 45%;
   }
 }
 
 @media (max-width: 913px) {
-  .invite {
+  .landing-page {
     width: 47%;
   }
 }
 
 @media (max-width: 874px) {
-  .invite {
+  .landing-page {
     width: 49%;
   }
 }
 
 @media (max-width: 839px) {
-  .invite {
+  .landing-page {
     width: 52%;
   }
 }
 
 @media (max-width: 785px) {
-  .invite {
+  .landing-page {
     width: 55%;
   }
 }
 
 @media (max-width: 748px) {
-  .invite {
+  .landing-page {
     width: 59%;
   }
 }
 
 @media (max-width: 700px) {
-  .invite {
+  .landing-page {
     width: 72%;
   }
 }
 
 @media (max-width: 570px) {
-  .invite {
+  .landing-page {
     width: 75%;
   }
 }
 
 @media (max-width: 551px) {
-  .invite {
+  .landing-page {
     width: 80%;
   }
 
@@ -412,7 +413,7 @@ a {
 }
 
 @media (max-width: 514px) {
-  .invite {
+  .landing-page {
     width: 70%;
   }
 
@@ -437,13 +438,13 @@ a {
 }
 
 @media (max-width: 470px) {
-  .invite {
+  .landing-page {
     width: 75%;
   }
 }
 
 @media (max-width: 437px) {
-  .invite {
+  .landing-page {
     width: 83%;
   }
 
@@ -453,7 +454,7 @@ a {
 }
 
 @media (max-width: 375px) {
-  .invite {
+  .landing-page {
     width: 92%;
   }
 
@@ -463,33 +464,33 @@ a {
 }
 
 /* @media (max-width: 1024px) {
-  .invite {
+  .landing-page {
     width: 60%;
   }
 } */
 
-/* .invite form {
+/* .landing-page form {
 }
 
-.invite form {
+.landing-page form {
 }
 
-.invite input[type='text'] {
+.landing-page input[type='text'] {
 }
 
-.invite input[type='submit'] {
+.landing-page input[type='submit'] {
 }
 
-.invite input[type='submit']:hover {
+.landing-page input[type='submit']:hover {
 }
 
-.invite a {
+.landing-page a {
 }
 
-.invite input[type='checkbox'] {
+.landing-page input[type='checkbox'] {
 }
 
-.invite a:hover {
+.landing-page a:hover {
 }
 
 #terms-header {
