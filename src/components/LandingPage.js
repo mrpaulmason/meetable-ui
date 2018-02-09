@@ -4,13 +4,20 @@ import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
 import Typed from 'react-typed';
 import '../copyright-symbol.png';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Checkbox from 'material-ui/Checkbox';
+import logo from '../meetable-logo.png';
 
 class LandingPage extends React.Component {
   state = {
-    phoneNumber: '',
+    phoneNumber: '        Default text (e.g., Enter number)',
     ref: this.props.location.pathname.slice(1),
-    termsAccepted: false
+    termsAccepted: true
   };
+
+  componentWillMount() {
+    Checkbox.defaultProps.disableTouchRipple = true
+  }
 
   validatePhoneNumber = input => {
     let phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -58,7 +65,7 @@ class LandingPage extends React.Component {
     }
     return (
       <div className="landing-page">
-        <h1 id="logo-box">M</h1>
+        <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
         <h1>
           Meet<span>a</span>ble
         </h1>
@@ -72,16 +79,16 @@ class LandingPage extends React.Component {
           />
         </div>
         <form>
-          <input type="text" placeholder="Default text (e.g., Enter number)" onChange={this.handleChange} />
-          <div className="inline-input">
-            <input type="checkbox" onClick={this.handleCheckbox} />
-            <label>
-              I accept the{' '}
-              <a href="/privacy" id="terms-link" target="_blank">
-                terms of service
-              </a>
-            </label>
-          </div>
+          <input type="text" placeholder='Default text (e.g., Enter number)' onChange={this.handleChange} />
+          <MuiThemeProvider>
+              <Checkbox />
+          </MuiThemeProvider>
+          <label style={{fontFamily: 'Montserrat', fontWeight: '400', marginLeft: '40px'}}>
+            I accept the{' '}
+            <a href="/privacy" id="terms-link" target="_blank">
+              terms of service
+            </a>
+          </label>
         </form>
         <div className="copyright">
           <img src={require('../copyright-symbol.png')} alt="copyright logo" />
