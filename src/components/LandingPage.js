@@ -74,7 +74,7 @@ class LandingPage extends React.Component {
           <Typed
             className="typed-text"
             strings={['for meeting IRL', 'for meeting up with friends', 'for planning first dates', 'for making work coffees happen']}
-            typeSpeed={100}
+            typeSpeed={120}
             loop
           />
         </div>
