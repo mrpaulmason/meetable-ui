@@ -54,14 +54,16 @@ p {
 }
 
 input {
-  width: 492px;
-  border: 2px solid #fff;
-  border-radius: 22px;
-  font-size: 20px;
+  width: 400px;
+  border: 0 none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 16px;
   color: #999999;
   line-height: 40px;
-  margin-top: 40px;
-  font-family: 'Montserrat', sans-serif;
+  padding-left: 40px;
+  background: url(.../icon_device_64x64.png) no-repeat left top; 
+
 }
 
 ::-webkit-input-placeholder {
