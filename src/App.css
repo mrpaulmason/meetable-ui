@@ -63,7 +63,7 @@ input {
   color: #999999;
   line-height: 40px;
   padding-left: 40px;
-  background: #FFF url(icon_device_24x24.png) no-repeat left middle; 
+  background: url(icon_device_24x24.png) no-repeat left middle #FFF; 
 
 }
 
