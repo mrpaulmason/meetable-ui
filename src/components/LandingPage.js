@@ -68,7 +68,7 @@ class LandingPage extends React.Component {
       <div className="landing-page">
         <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
         <h1>
-         <img src={wordmark} alt='Meetable' style={{width: '225px'}}/>
+         <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
         <div>
           <p>AI</p>
