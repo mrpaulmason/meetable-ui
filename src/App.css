@@ -73,11 +73,11 @@ input {
   opacity: 1 !important;
 }
 
-/* input[type='checkbox'] {
+input[type='checkbox'] {
   margin-top: 20px;
   margin-right: 0px;
   width: 30px;
-} */
+} 
 
 label {
   font-size: 0.8em;
