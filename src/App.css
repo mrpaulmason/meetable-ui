@@ -20,16 +20,14 @@ body {
   margin: 0 auto;
 }
 
-/*
 .landing-page h1 span {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 400;
 }
-*/
 
 h1 {
   letter-spacing: -4px;
-  font-size: 4.3em;
+  font-size: 10em;
   font-weight: 400;
   margin-top: 65px;
   margin-bottom: 0;
