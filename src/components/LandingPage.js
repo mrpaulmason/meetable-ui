@@ -7,6 +7,7 @@ import '../copyright-symbol.png';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Checkbox from 'material-ui/Checkbox';
 import logo from '../meetable-logo.png';
+import wordmark from '../typetreatment_meetable_landingpage.png';
 
 class LandingPage extends React.Component {
   state = {
@@ -67,7 +68,7 @@ class LandingPage extends React.Component {
       <div className="landing-page">
         <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
         <h1>
-          Meet<span>a</span>ble
+         <img src={wordmark} alt='Meetable'>
         </h1>
         <div>
           <p>AI</p>
