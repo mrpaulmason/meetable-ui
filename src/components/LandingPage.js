@@ -10,7 +10,7 @@ import logo from '../meetable-logo.png';
 
 class LandingPage extends React.Component {
   state = {
-    phoneNumber: '        Default text (e.g., Enter number)',
+    phoneNumber: 'Enter your mobile number',
     ref: this.props.location.pathname.slice(1),
     termsAccepted: true
   };
@@ -79,7 +79,7 @@ class LandingPage extends React.Component {
           />
         </div>
         <form>
-          <input type="text" placeholder='Default text (e.g., Enter number)' onChange={this.handleChange} />
+          <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
           <MuiThemeProvider>
               <Checkbox />
           </MuiThemeProvider>
