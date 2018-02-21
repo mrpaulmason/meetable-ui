@@ -73,9 +73,8 @@ handleCheckbox = () => {
           <p class="taglineStatic">AI</p>
           <p class="taglineDynamic">
            <Typed
-             className="typed-text"
              strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
-             typeSpeed={70}
+             typeSpeed={150}
              loop
            />
           </p>
