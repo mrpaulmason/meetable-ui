@@ -77,9 +77,8 @@ handleCheckbox = () => {
              strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
              typeSpeed={70}
              loop
-        </>
            />
-          />
+          </p>
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
