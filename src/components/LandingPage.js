@@ -81,12 +81,14 @@ handleCheckbox = () => {
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
-          <label style={{fontFamily: 'Montserrat', fontWeight: '400', marginLeft: '40px'}}>
-            By submitting your mobile number, you agree to our{' '}
-            <a href="/privacy" id="terms-link" target="_blank">
-              terms of service.
-            </a>
-          </label>
+          <p>
+              <label>
+                By submitting your mobile number, you agree to our{' '}
+                <a href="/privacy" id="terms-link" target="_blank">
+                  terms of service.
+                </a>
+              </label>
+          </p>
         </form>
         <div className="copyright">
           <img src={require('../copyright-symbol.png')} alt="copyright logo" />
