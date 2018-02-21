@@ -9,6 +9,13 @@ import Checkbox from 'material-ui/Checkbox';
 import logo from '../meetable-logo.png';
 import wordmark from '../typetreatment_meetable_landingpage.png';
 
+const muiTheme = getMuiTheme({
+  checkbox: {
+    textColor: cyan500,
+  }
+});
+
+
 class LandingPage extends React.Component {
   state = {
     phoneNumber: 'Enter your mobile number',
@@ -74,7 +81,7 @@ class LandingPage extends React.Component {
           <p>AI</p>
           <Typed
             className="typed-text"
-            strings={['for meeting IRL', 'for meeting up with friends', 'for planning first dates', 'for making work coffees happen']}
+            strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for grabbing a coffee']}
             typeSpeed={70}
             loop
           />
@@ -85,9 +92,9 @@ class LandingPage extends React.Component {
               <Checkbox />
           </MuiThemeProvider>
           <label style={{fontFamily: 'Montserrat', fontWeight: '400', marginLeft: '40px'}}>
-            I accept the{' '}
+            By submitting your mobile number, you agree to our{' '}
             <a href="/privacy" id="terms-link" target="_blank">
-              terms of service
+              terms of service.
             </a>
           </label>
         </form>
