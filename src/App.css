@@ -299,14 +299,14 @@ a {
   p,
   .taglineDynamic,
   .taglineStatic {
-    font-size: 1.2em;
+    font-size: 90%;
   }
 
   input[type='text'] {
     width: 290px;
     margin-top: 80px;
     height: 32px;
-    font-size: 1em;
+    font-size: 100%;
   }
 
   h1 {
