@@ -50,6 +50,7 @@ p {
   font-size: 1.8em;
   font-weight: 300;
   margin-top: 10px;
+  display:inline-block;
 }
 
 input {
@@ -80,6 +81,7 @@ input[type='checkbox'] {
 
 label {
   font-size: 0.8em;
+  margin-top: 10px;
 }
 
 /* .inline-input {
