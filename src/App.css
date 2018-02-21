@@ -6,7 +6,7 @@ body {
   background: linear-gradient(#5964d5, #59c1ee 90%) fixed;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-size: 1em;
+  font-size: .75em;
 }
 
 .nav {
@@ -110,11 +110,6 @@ label {
   font-size: 0.8em;
   margin-top: 20px;
 }
-
-/* .inline-input {
-  display: inline-block;
-  width: 100%;
-} */
 
 a {
   color: #ffffff;
@@ -297,15 +292,15 @@ a {
   }
 
   p.taglineStatic, {
-    font-size: 85%;
+    font-size: 80%;
   }
   
   p.taglineDynamic, {
-    font-size: 85%;
+    font-size: 80%;
   }
   
   p.smallerText {
-  font-size: 80%;
+  font-size: 70%;
   }
 
   input[type='text'] {
