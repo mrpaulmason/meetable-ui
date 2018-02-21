@@ -20,10 +20,11 @@ body {
   margin: 0 auto;
 }
 
+*/ REMOVED IN FAVOR OF PNG
 .landing-page h1 span {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 400;
-}
+}*/
 
 h1 {
   letter-spacing: -4px;
@@ -81,6 +82,7 @@ input[type='checkbox'] {
 
 label {
   font-size: 0.8em;
+  margin-top: 10px;
 }
 
 /* .inline-input {
