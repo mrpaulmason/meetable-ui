@@ -68,6 +68,12 @@ p.taglineDynamic {
   display:inline-block;
 }
 
+p.smallerText {
+  font-size: 85%;
+  font-weight: 300;
+  display:inline-block;
+}
+
 input {
   width: 350px;
   border: 2px solid #fff;
@@ -148,7 +154,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -158,7 +164,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -168,7 +174,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -178,7 +184,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -188,7 +194,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -198,7 +204,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -208,7 +214,7 @@ a {
   }
 
   input {
-    width: 492px;
+    width: 452px;
   }
 }
 
@@ -218,7 +224,7 @@ a {
   }
 
   input {
-    width: 415px;
+    width: 375px;
   }
 
   p,
@@ -281,7 +287,7 @@ a {
   }
 
   input {
-    width: 405px;
+    width: 425px;
   }
 }
 
@@ -291,12 +297,13 @@ a {
   }
 
   p,
-  .typed-text span {
+  .taglineDynamic,
+  .taglineStatic {
     font-size: 1.2em;
   }
 
   input[type='text'] {
-    width: 330px;
+    width: 290px;
     margin-top: 80px;
     height: 32px;
     font-size: 1em;
@@ -322,7 +329,7 @@ a {
   }
 
   input {
-    width: 325px;
+    width: 285px;
   }
 }
 
@@ -332,6 +339,6 @@ a {
   }
 
   input {
-    width: 325px;
+    width: 285px;
   }
 }
