@@ -70,14 +70,15 @@ handleCheckbox = () => {
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
         <div>
-          <p class="tagline">
-          AI
-          <Typed
-            className="typed-text"
-            strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for grabbing a coffee']}
-            typeSpeed={70}
-            loop
-           </p>
+          <p class="taglineStatic">AI</p>
+          <p class="taglineDynamic">
+           <Typed
+             className="typed-text"
+             strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
+             typeSpeed={70}
+             loop
+        </>
+           />
           />
         </div>
         <form>
