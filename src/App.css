@@ -49,15 +49,22 @@ h1 {
 }
 
 p {
+  font-size: 100%;
   font-weight: 400;
   margin: 10px 0px 10px 0px;
 }
 
 
-p.tagline {
-  font-size: 1.8em;
+p.taglineStatic {
+  font-size: 180%;
   font-weight: 300;
   margin-right: 10px;
+  display:inline-block;
+}
+
+p.taglineDynamic {
+  font-size: 180%;
+  font-weight: 300;
   display:inline-block;
 }
 
