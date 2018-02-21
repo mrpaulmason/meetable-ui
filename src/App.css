@@ -4,6 +4,8 @@
 
 body {
   background: linear-gradient(#5964d5, #59c1ee 90%) fixed;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
 }
 
 .nav {
@@ -13,18 +15,17 @@ body {
 }
 
 .landing-page {
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
   height: 100vh;
   width: 37%;
   margin: 0 auto;
 }
 
-*/ REMOVED IN FAVOR OF PNG
+/* REMOVED IN FAVOR OF PNG
 .landing-page h1 span {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 400;
-}*/
+}
+*/
 
 h1 {
   letter-spacing: -4px;
@@ -47,9 +48,16 @@ h1 {
 }
 
 p {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 10px 0px 10px 0px;
+}
+
+
+p.tagline {
   font-size: 1.8em;
   font-weight: 300;
-  margin-top: 10px;
+  margin-right: 10px;
   display:inline-block;
 }
 
@@ -81,7 +89,7 @@ input[type='checkbox'] {
 
 label {
   font-size: 0.8em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* .inline-input {
@@ -95,7 +103,7 @@ a {
 
 .copyright {
   text-align: center;
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 40px;
