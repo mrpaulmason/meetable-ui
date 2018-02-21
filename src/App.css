@@ -72,13 +72,14 @@ input {
   width: 350px;
   border: 2px solid #fff;
   border-radius: 22px;
+  margin: 0 0 10px 0;
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-size: 16px;
   color: #999999;
   line-height: 40px;
   padding-left: 40px;
-  background: url(icon_device_24x24.png) no-repeat left middle #FFF; 
+  background: url(icon_device_24x24.png) no-repeat left middle;
 
 }
 
@@ -115,17 +116,11 @@ a {
 
 .copyright {
   text-align: center;
-  position: relative;
+  position: fixed;
   left: 0;
   right: 0;
-  bottom: 40px;
+  bottom: 20px;
   width: 100%;
-}
-
-.copyright p {
-  font-size: 1em;
-  margin-left: 5px;
-  width: 115px;
 }
 
 .copyright img {
