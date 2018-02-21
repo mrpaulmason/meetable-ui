@@ -49,9 +49,7 @@ h1 {
 p {
   font-size: 1.8em;
   font-weight: 300;
-  margin-top: 5px;
-  width: 7%;
-  display: inline-block;
+  margin-top: 10px;
 }
 
 input {
@@ -82,7 +80,6 @@ input[type='checkbox'] {
 
 label {
   font-size: 0.8em;
-  margin-top: 10px;
 }
 
 /* .inline-input {
