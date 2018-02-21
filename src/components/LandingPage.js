@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
 import Typed from 'react-typed';
 import '../copyright-symbol.png';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Checkbox from 'material-ui/Checkbox';
 import logo from '../meetable-logo.png';
 import wordmark from '../typetreatment_meetable_landingpage.png';
@@ -71,26 +70,31 @@ handleCheckbox = () => {
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
         <div>
-          <p>AI</p>
+          <p class="tagline">AI</p>
           <Typed
             className="typed-text"
             strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for grabbing a coffee']}
             typeSpeed={70}
             loop
           />
+        <p></p>
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
           <label>
             By submitting your mobile number, you agree to our{' '}
-            <a href="/privacy" id="terms-link" target="_blank">
-              terms of service.
+            <a href="/privacy" id="privacy-link" target="_blank">
+              terms of service
+            </a>
+            and 
+             <a href="/termsofservice" id="terms-link" target="_blank">
+            privacy policy.
             </a>
           </label>
         </form>
         <div className="copyright">
           <img src={require('../copyright-symbol.png')} alt="copyright logo" />
-          <p>2018 Meetable</p>
+          <p>2018 Meetable  |  more@meetable.com</p>
         </div>
       </div>
     );
