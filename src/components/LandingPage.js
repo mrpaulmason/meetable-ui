@@ -70,31 +70,33 @@ handleCheckbox = () => {
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
         <div>
-          <p class="tagline">AI</p>
+          <p class="tagline">
+          AI
           <Typed
             className="typed-text"
             strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for grabbing a coffee']}
             typeSpeed={70}
             loop
+           </p>
           />
-        <p></p>
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
-          <label>
+          <p>
             By submitting your mobile number, you agree to our{' '}
             <a href="/privacy" id="privacy-link" target="_blank">
               terms of service
             </a>
-            and 
+            and{' '} 
              <a href="/termsofservice" id="terms-link" target="_blank">
             privacy policy.
             </a>
-          </label>
+          </p>
         </form>
         <div className="copyright">
-          <img src={require('../copyright-symbol.png')} alt="copyright logo" />
-          <p>2018 Meetable  |  more@meetable.com</p>
+          <p>
+            <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
+          </p>
         </div>
       </div>
     );
