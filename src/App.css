@@ -292,11 +292,11 @@ a {
   }
 
   p.taglineStatic, {
-    font-size: 80%;
+    font-size: 85%;
   }
   
   p.taglineDynamic, {
-    font-size: 80%;
+    font-size: 85%;
   }
   
   p.smallerText {
@@ -307,7 +307,6 @@ a {
     width: 290px;
     margin-top: 80px;
     height: 32px;
-    font-size: 100%;
   }
 
   h1 {
