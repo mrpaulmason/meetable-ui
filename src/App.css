@@ -58,7 +58,7 @@ p {
 p.taglineStatic {
   font-size: 180%;
   font-weight: 300;
-  margin-right: 10px;
+  margin-right: 5px;
   display:inline-block;
 }
 
@@ -296,10 +296,16 @@ a {
     width: 70%;
   }
 
-  p,
-  .taglineDynamic,
-  .taglineStatic {
-    font-size: 90%;
+  p.taglineStatic, {
+    font-size: 85%;
+  }
+  
+  p.taglineDynamic, {
+    font-size: 85%;
+  }
+  
+  p.smallerText {
+  font-size: 80%;
   }
 
   input[type='text'] {
