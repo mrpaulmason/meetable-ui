@@ -9,13 +9,6 @@ import Checkbox from 'material-ui/Checkbox';
 import logo from '../meetable-logo.png';
 import wordmark from '../typetreatment_meetable_landingpage.png';
 
-const muiTheme = getMuiTheme({
-  checkbox: {
-    textColor: cyan500,
-  }
-});
-
-
 class LandingPage extends React.Component {
   state = {
     phoneNumber: 'Enter your mobile number',
@@ -38,7 +31,7 @@ class LandingPage extends React.Component {
     });
   };
 
-  handleCheckbox = () => {
+handleCheckbox = () => {
     if (this.state.termsAccepted === false) {
       this.setState({
         termsAccepted: true
@@ -88,9 +81,6 @@ class LandingPage extends React.Component {
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
-          <MuiThemeProvider>
-              <Checkbox />
-          </MuiThemeProvider>
           <label style={{fontFamily: 'Montserrat', fontWeight: '400', marginLeft: '40px'}}>
             By submitting your mobile number, you agree to our{' '}
             <a href="/privacy" id="terms-link" target="_blank">
