@@ -6,6 +6,7 @@ body {
   background: linear-gradient(#5964d5, #59c1ee 90%) fixed;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  font-size: 1em;
 }
 
 .nav {
@@ -29,7 +30,7 @@ body {
 
 h1 {
   letter-spacing: -4px;
-  font-size: 4.3em;
+  font-size: 400%;
   font-weight: 400;
   margin-top: 65px;
   margin-bottom: 0;
@@ -38,7 +39,7 @@ h1 {
 .typed-text span {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8em;
+  font-size: 180%;
   font-weight: 300;
 }
 
@@ -48,7 +49,6 @@ h1 {
 }
 
 p {
-  font-size: 1em;
   font-weight: 400;
   margin: 10px 0px 10px 0px;
 }
@@ -79,6 +79,11 @@ input {
   /* WebKit browsers */
   color: #999999;
   opacity: 1 !important;
+}
+
+form }
+margin: 10px;
+display: inline-block;
 }
 
 input[type='checkbox'] {
