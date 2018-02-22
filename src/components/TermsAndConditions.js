@@ -1,4 +1,10 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
+import Typed from 'react-typed';
+import '../copyright-symbol.png';
+import Checkbox from 'material-ui/Checkbox';
 import logo from '../meetable-logo.png';
 import wordmark from '../typetreatment_meetable_landingpage.png';
 
