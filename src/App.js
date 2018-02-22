@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import LandingPage from './components/LandingPage';
-import TermsofService from './components/TermsOfService';
+import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import MapContainer from './components/MapContainer';
 import { Route, Switch } from 'react-router-dom';
