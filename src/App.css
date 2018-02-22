@@ -298,14 +298,22 @@ a {
     font-size: 1em
   }
   
+  
+  h1 {
+    font-size: 300%;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  
   h2 {
-  font-size: 250%;
+  font-size: 175%;
   font-weight: 600;
   margin: 25px 0 25px 0;
   }
 
   p {
-   font-size: 90%;
+   font-size: 100%;
   }
   
   .taglineStatic,
@@ -324,12 +332,6 @@ a {
     font-size: 100%
   }
 
-  h1 {
-    font-size: 300%;
-    font-weight: 500;
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
 }
 
 @media (max-width: 470px) {
