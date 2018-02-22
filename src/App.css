@@ -74,6 +74,12 @@ p.smallerText {
   display:inline-block;
 }
 
+p.verySmallText {
+  font-size: 65%;
+  font-weight: 300;
+  display:inline-block;
+}
+
 input {
   width: 350px;
   border: 2px solid #fff;
@@ -289,18 +295,17 @@ a {
 @media (max-width: 514px) {
   .landing-page {
     width: 70%;
+    font-size: 1em
   }
 
-  p.taglineStatic, {
-    font-size: 85%;
-  }
-  
-  p.taglineDynamic, {
-    font-size: 85%;
+  p,
+  .taglineStatic,
+  .taglineDynamic, {
+    font-size: 100%;
   }
   
   p.smallerText {
-  font-size: 70%;
+  font-size: 75%;
   }
 
   input[type='text'] {
@@ -310,7 +315,7 @@ a {
   }
 
   h1 {
-    font-size: 3.2em;
+    font-size: 300%;
     font-weight: 500;
     margin-top: 50px;
     margin-bottom: 0;
