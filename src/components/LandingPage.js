@@ -74,26 +74,26 @@ handleCheckbox = () => {
           <p class="taglineDynamic">
            <Typed
              strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
-             typeSpeed={150}
+             typeSpeed={70}
              loop
            />
           </p>
         </div>
         <form>
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
-          <p>
+          <p class="smallerText">
             By submitting your mobile number, you agree to our{' '}
             <a href="/privacy" id="privacy-link" target="_blank">
               terms of service
-            </a>
-            and{' '} 
+            </a> 
+            {' '}and{' '} 
              <a href="/termsofservice" id="terms-link" target="_blank">
             privacy policy.
             </a>
           </p>
         </form>
         <div className="copyright">
-          <p>
+          <p class="verySmallText">
             <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
           </p>
         </div>
