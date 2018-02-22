@@ -86,8 +86,7 @@ input {
   border-radius: 22px;
   margin: 0 0 10px 0;
   font-family: 'Montserrat', sans-serif;
-  font-style: italic;
-  font-size: 16px;
+  font-size: 100%;
   color: #999999;
   line-height: 40px;
   padding-left: 40px;
@@ -305,7 +304,7 @@ a {
   }
   
   p.smallerText {
-  font-size: 75%;
+  font-size: 85%;
   }
 
   input[type='text'] {
