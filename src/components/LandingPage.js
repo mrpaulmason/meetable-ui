@@ -74,7 +74,7 @@ handleCheckbox = () => {
           <p class="taglineDynamic">
            <Typed
              strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
-             typeSpeed={70}
+             typeSpeed={1000}
              loop
            />
           </p>
@@ -93,7 +93,7 @@ handleCheckbox = () => {
           </p>
         </form>
         <div className="copyright">
-          <p class="verySmallText">
+          <p class="smallerText">
             <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
           </p>
         </div>
