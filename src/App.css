@@ -69,7 +69,7 @@ p.taglineDynamic {
 }
 
 p.smallerText {
-  font-size: 85%;
+  font-size: 100%;
   font-weight: 300;
   display:inline-block;
 }
@@ -84,7 +84,7 @@ input {
   width: 350px;
   border: 2px solid #fff;
   border-radius: 22px;
-  margin: 60x 0 10px 0;
+  margin: 60x 0 25px 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 125%;
   color: #999999;
