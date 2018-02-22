@@ -83,11 +83,11 @@ handleCheckbox = () => {
           <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
           <p class="smallerText">
             By submitting your mobile number, you agree to our{' '}
-            <a href="/privacy" id="privacy-link" target="_blank">
-              terms of service
+            <a href="/termsofservice" id="terms-link" target="_blank"> 
+            terms of service
             </a> 
             {' '}and{' '} 
-             <a href="/termsofservice" id="terms-link" target="_blank">
+             <a href="/privacypolicy" id="privacy-link" target="_blank">
             privacy policy.
             </a>
           </p>
