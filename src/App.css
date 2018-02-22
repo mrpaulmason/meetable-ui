@@ -84,7 +84,7 @@ input {
   width: 350px;
   border: 2px solid #fff;
   border-radius: 22px;
-  margin: 0 0 10px 0;
+  margin: 60x 0 10px 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 100%;
   color: #999999;
@@ -309,7 +309,7 @@ a {
 
   input[type='text'] {
     width: 290px;
-    margin-top: 80px;
+    margin: 60px 0 10px 0;
     height: 32px;
   }
 
