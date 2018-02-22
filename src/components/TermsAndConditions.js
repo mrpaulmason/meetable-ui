@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../meetable-logo.png';
+import wordmark from '../typetreatment_meetable_landingpage.png';
 
 const TermsOfService = () => {
   return (
