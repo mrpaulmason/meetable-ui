@@ -24,7 +24,16 @@ class LandingPage extends React.Component {
     return input.match(phoneNumber) ? true : false;
   };
 
+  convertToNumber = str => {
+    var re = /\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})/g; 
+    var subst = '$1 $2-$3'; 
+    var result = str.replace(re, subst);
+
+    return result;
+  };
+
   handleChange = e => {
+
     this.setState({
       phoneNumber: e.target.value
     });
@@ -59,6 +68,14 @@ handleCheckbox = () => {
     }
   };
 
+  handleKeyPress = (e) => {
+    if ((e.key >=-1 && e.key < 10)) {
+      return true;
+    } else {
+      e.preventDefault();
+    }
+  };
+
   render() {
     if (this.props.user.postResults !== '' && this.props.user.postResults !== 'invalid code') {
       alert(this.props.user.postResults);
@@ -70,8 +87,8 @@ handleCheckbox = () => {
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
         <div>
-          <p class="taglineStatic">AI</p>
-          <p class="taglineDynamic">
+          <p className="taglineStatic">AI</p>
+          <p className="taglineDynamic">
            <Typed
              strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
              typeSpeed={40}
@@ -80,8 +97,9 @@ handleCheckbox = () => {
           </p>
         </div>
         <form>
-          <input type="text" placeholder='Enter your mobile number' onChange={this.handleChange} />
-          <p class="smallerText">
+          <input type="tel" pattern="[0-9]*" autocomplete="on" placeholder='Enter your mobile number' onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
+          <button></button> 
+          <p className="smallerText">
             By submitting your mobile number, you agree to our{' '}
             <a href="/termsofservice" id="terms-link" target="_blank"> 
             terms of service
@@ -93,7 +111,7 @@ handleCheckbox = () => {
           </p>
         </form>
         <div className="copyright">
-          <p class="smallerText">
+          <p className="smallerText">
             <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
           </p>
         </div>

@@ -91,8 +91,20 @@ input {
   color: #999999;
   line-height: 40px;
   padding-left: 40px;
-  background: url(icon_device_24x24.png) no-repeat left middle;
+  background: url(icon_device_24x24.png) no-repeat 10px 9px white;
+  background-size: 24px 24px; 
+}
 
+button {
+    margin-left: -50px;
+    height: 46px;
+    width: 46px;
+    background: blue;
+    color: white;
+    border: 0;
+    -webkit-appearance: none;
+    background: url(icon_arrow_36x36_grey.png) no-repeat 8px 3px;
+    vertical-align: middle;
 }
 
 ::-webkit-input-placeholder {
@@ -166,6 +178,10 @@ a {
 
   input {
     width: 452px;
+  }
+
+  button {
+    background: url(icon_arrow_36x36_grey.png) no-repeat 8px 5px;
   }
 }
 
@@ -327,8 +343,8 @@ a {
 
   input[type='text'] {
     width: 290px;
-    margin: 60px 0 10px 0;
-    height: 32px;
+    margin: 0px 0 10px 0;
+    height: 40px;
     font-size: 100%
   }
 
