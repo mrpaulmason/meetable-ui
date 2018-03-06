@@ -81,39 +81,63 @@ handleCheckbox = () => {
       alert(this.props.user.postResults);
     }
     return (
-      <div className="landing-page">
-        <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
-        <h1>
-         <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
-        </h1>
-        <div>
-          <p className="taglineStatic">AI</p>
-          <p className="taglineDynamic">
-           <Typed
-             strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
-             typeSpeed={40}
-             loop
-           />
-          </p>
+      <div class="landing-page">
+        <div class="logo">
+          <img width="220" src="./images/ic_meetable_wordmark.svg" alt="Meetable Logo" title="Meetable" />
         </div>
-        <form>
-          <input type="tel" pattern="[0-9]*" autocomplete="on" placeholder='Enter your mobile number' onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
-          <button></button> 
-          <p className="smallerText">
-            By submitting your mobile number, you agree to our{' '}
-            <a href="/termsofservice" id="terms-link" target="_blank"> 
-            terms of service
-            </a> 
-            {' '}and{' '} 
-             <a href="/privacypolicy" id="privacy-link" target="_blank">
-            privacy policy.
-            </a>
-          </p>
+
+        <div id="conversation">
+
+          <div class="typed-message message-0" style="display:none;">
+          <p>Hello!</p>
+        </div>
+
+        <div class="typed-message message-1" style="display:none;">
+          <p>Welcome. I am AI that makes it WAY easier to meet up with people</p>
+        </div>
+
+        <div class="typed-message message-2" style="display:none;">
+          <p>To get started please confirm your cellphone number below</p>
+        </div>
+
+        <div class="typed-message my-number-message user-typed-message" style="display:none">
+          <p>my number is <span class="user-phone-number"></span></p>
+        </div>
+
+        <br style="clear:right;" />
+
+          <div class="typing">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </div>
+
+        <form style="display:none;">
+          <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
+          <button class="submit-btn" disabled>Submit</button>
+          <br />
+          <p class="smallerText" style="display:none;">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
-        <div className="copyright">
-          <p className="smallerText">
-            <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
-          </p>
+
+        <div class="btn-row" style="display:none;">
+          <a href="javascript: void(0);" class="btn">Got it!</a>
+          <a href="javascript: void(0);" class="btn">Resend</a>
+          <a href="javascript: void(0);" class="btn">Change #</a>
+        </div>
+
+        <div class="copyright">
+          <div class="left">
+            <img src="./images/ic_meetable_icon_hollow.svg" alt="copyright logo" />
+          </div>
+
+          <div class="right">
+            <p>
+              2018 Meetable  |  more@meetable.com
+            </p>
+          </div>
+
+          <br class="clear-both" />
         </div>
       </div>
     );

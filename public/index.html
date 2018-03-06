@@ -21,6 +21,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Meetable</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
     <noscript>
@@ -37,5 +38,87 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script type="text/javascript">
+      window.onload = function() {
+
+        var messages = [
+          'Hello!',
+          'Welcome. I\'m AI that makes it WAY easier to meet up with people',
+          'To get started please confirm your cellphone number below'
+        ];
+
+        $("input[name='phoneNumber']").keypress(function(e) {
+          if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+              return false;
+            }
+            $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
+            
+            var phoneNumber = $(this).val();
+            console.log(phoneNumber);
+            if( validatePhoneNumber(phoneNumber) ) {
+              console.log(true);
+              $('button').prop("disabled", false);
+            } else {
+              console.log(false);
+              $('button').prop("disabled", true);
+            }
+        });
+
+        $('.submit-btn').on('click', function(e){
+          e.preventDefault(e);
+          var phoneNumber = $('#phoneNumberText').val();
+    
+          if( validatePhoneNumber(phoneNumber) ) {
+            $('.user-phone-number').text(phoneNumber);
+            $('.user-typed-message').show();
+
+
+            alert('hi');
+          } else {
+            //show error
+          }
+        });
+
+        setTimeout(function(){
+          startChat();
+        }, 750);
+
+        function validatePhoneNumber(phoneNumber) {
+          var regEx = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+
+          if(phoneNumber.match(regEx)) {
+              return true;
+          }  
+
+          return false;
+        }
+
+        function startChat() {
+          for (let i = 0; i < messages.length; i++) {
+              setTimeout( function timer(){
+                  console.log(messages[i]);
+                  $('.message-' + i).show();
+
+                  if(i === 2) {
+                    $('.typing').hide();
+                    $('form').show();
+                  }
+              }, 1600 * i );
+          }
+        }
+
+        function postRequest(phoneNumber) {
+
+          $.post("http://meetable-api.herokuapp.com/meetings/ac2bc6/accept",
+            {
+                phone_number: phoneNumber,
+            },
+            function(data, status){
+                console.log("Data: " + data + "\nStatus: " + status);
+            });
+        }
+      };
+    </script>
   </body>
 </html>
