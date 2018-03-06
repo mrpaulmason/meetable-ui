@@ -99,11 +99,11 @@
           for (let i = 0; i < messages.length; i++) {
               setTimeout( function timer(){
                   console.log(messages[i]);
-                  $('.message-' + i).show();
+                  $('.message-' + i).removeClass('hidden');
 
                   if(i === 2) {
                     $('.typing').hide();
-                    $('form').show();
+                    $('form').removeClass('hidden');
                   }
               }, 1600 * i );
           }
