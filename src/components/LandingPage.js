@@ -86,16 +86,33 @@ handleCheckbox = () => {
         <h1>
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
-        <div>
-          <p className="taglineStatic">AI</p>
-          <p className="taglineDynamic">
-           <Typed
-             strings={['for meeting IRL', 'for planning first dates', 'for meeting up with friends', 'for work coffees']}
-             typeSpeed={40}
-             loop
-           />
-          </p>
+
+        <div id="conversation">
+
+          <div className="typed-message message-0">
+            <p>Hello!</p>
+          </div>
+
+          <div class="typed-message message-1">
+            <p>Welcome. I am AI that makes it WAY easier to meet up with people</p>
+          </div>
+
+          <div class="typed-message message-2">
+            <p>To get started please confirm your cellphone number below</p>
+          </div>
+
+          <div class="typed-message my-number-message user-typed-message">
+            <p>my number is <span class="user-phone-number"></span></p>
+          </div>
+
+          <div class="typing">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
         </div>
+
         <form>
           <input type="tel" pattern="[0-9]*" autocomplete="on" placeholder='Enter your mobile number' onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
           <button></button> 
@@ -110,11 +127,21 @@ handleCheckbox = () => {
             </a>
           </p>
         </form>
+
         <div className="copyright">
-          <p className="smallerText">
-            <img src={require('../copyright-symbol.png')} alt="copyright logo" /> 2018 Meetable  |  more@meetable.com
-          </p>
+          <div className="left">
+            <img src="./images/ic_meetable_icon_hollow.svg" alt="copyright logo" />
+          </div>
+
+          <div className="right">
+            <p>
+              2018 Meetable  |  more@meetable.com
+            </p>
+          </div>
+
+          <br className="clear-both" />
         </div>
+
       </div>
     );
   }
