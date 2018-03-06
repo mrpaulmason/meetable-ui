@@ -83,7 +83,7 @@ handleCheckbox = () => {
     return (
       <div className="landing-page">
         <h1>
-         <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
+         <img src={wordmark} alt='Meetable' />
         </h1>
 
         <div id="conversation">
@@ -116,7 +116,7 @@ handleCheckbox = () => {
           <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
           <button className="submit-btn" disabled>Submit</button>
           <br />
-          <p className="smallerText" style="display:none;">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
+          <p className="smallerText hidden">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
 
         <div className="copyright">
