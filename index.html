@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!--<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Montserrat:300,400,500,600" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Meetable</title>
+
+    <script type="text/javascript" src="./resources/scripts/jquery.js"></script>
+  </head>
+  <body>
+    <div id="root">
+    	<div class="landing-page">
+    		<div class="logo">
+    			<img width="220" src="./images/ic_meetable_wordmark.svg" alt="Meetable Logo" title="Meetable" />
+    		</div>
+
+    		<div id="conversation">
+
+    			<div class="typed-message message-0" style="display:none;">
+				  <p>Hello!</p>
+				</div>
+
+				<div class="typed-message message-1" style="display:none;">
+					<p>Welcome. I'm AI that makes it WAY easier to meet up with people</p>
+				</div>
+
+				<div class="typed-message message-2" style="display:none;">
+					<p>To get started please confirm your cellphone number below</p>
+				</div>
+
+				<div class="typed-message my-number-message user-typed-message" style="display:none">
+ 					<p>my number is <span class="user-phone-number"></span></p>
+				</div>
+
+				<br style="clear:right;" />
+
+    			<div class="typing">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+    		</div>
+
+    		<form style="display:none;">
+    			<input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
+    			<button class="submit-btn" disabled>Submit</button>
+    			<br />
+    			<p class="smallerText" style="display:none;">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
+    		</form>
+
+    		<div class="btn-row" style="display:none;">
+    			<a href="javascript: void(0);" class="btn">Got it!</a>
+    			<a href="javascript: void(0);" class="btn">Resend</a>
+    			<a href="javascript: void(0);" class="btn">Change #</a>
+    		</div>
+
+			<div class="copyright">
+				<div class="left">
+					<img src="./images/ic_meetable_icon_hollow.svg" alt="copyright logo" />
+				</div>
+
+				<div class="right">
+					<p>
+						2018 Meetable  |  more@meetable.com
+					</p>
+				</div>
+
+				<br class="clear-both" />
+			</div>
+    	</div>
+    </div>
+
+    <script type="text/javascript" src="typed.js"></script>
+
+
+	<script type="text/javascript">
+		window.onload = function() {
+
+			var messages = [
+				'Hello!',
+				'Welcome. I\'m AI that makes it WAY easier to meet up with people',
+				'To get started please confirm your cellphone number below'
+			];
+
+			$("input[name='phoneNumber']").keypress(function(e) {
+				if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+			      return false;
+			    }
+			    $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
+			    
+			    var phoneNumber = $(this).val();
+			    console.log(phoneNumber);
+			    if( validatePhoneNumber(phoneNumber) ) {
+			    	console.log(true);
+			    	$('button').prop("disabled", false);
+			    } else {
+			    	console.log(false);
+			    	$('button').prop("disabled", true);
+			    }
+			});
+
+			$('.submit-btn').on('click', function(e){
+				e.preventDefault(e);
+				var phoneNumber = $('#phoneNumberText').val();
+	
+				if( validatePhoneNumber(phoneNumber) ) {
+					$('.user-phone-number').text(phoneNumber);
+					$('.user-typed-message').show();
+
+
+					alert('hi');
+				} else {
+					//show error
+				}
+			});
+
+			setTimeout(function(){
+				startChat();
+			}, 750);
+
+			function validatePhoneNumber(phoneNumber) {
+				var regEx = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+
+				if(phoneNumber.match(regEx)) {
+				    return true;
+				}  
+
+				return false;
+			}
+
+			function startChat() {
+				for (let i = 0; i < messages.length; i++) {
+				    setTimeout( function timer(){
+				        console.log(messages[i]);
+				        $('.message-' + i).show();
+
+				        if(i === 2) {
+				        	$('.typing').hide();
+				        	$('form').show();
+				        }
+				    }, 1600 * i );
+				}
+			}
+
+			function postRequest(phoneNumber) {
+
+				$.post("http://meetable-api.herokuapp.com/meetings/ac2bc6/accept",
+			    {
+			        phone_number: phoneNumber,
+			    },
+			    function(data, status){
+			        console.log("Data: " + data + "\nStatus: " + status);
+			    });
+			}
+		};
+	</script>
+  </body>
+</html>
+
+
+<!--
+
+	-->
