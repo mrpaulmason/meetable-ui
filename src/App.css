@@ -534,3 +534,7 @@ a {
 
 }
     
+
+.hidden {
+  display: none;
+}

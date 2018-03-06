@@ -82,30 +82,29 @@ handleCheckbox = () => {
     }
     return (
       <div className="landing-page">
-        <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
         <h1>
          <img src={wordmark} alt='Meetable' style={{width: '275px'}}/>
         </h1>
 
         <div id="conversation">
 
-          <div className="typed-message message-0">
+          <div className="typed-message message-0 hidden">
             <p>Hello!</p>
           </div>
 
-          <div class="typed-message message-1">
+          <div className="typed-message message-1 hidden">
             <p>Welcome. I am AI that makes it WAY easier to meet up with people</p>
           </div>
 
-          <div class="typed-message message-2">
+          <div className="typed-message message-2 hidden">
             <p>To get started please confirm your cellphone number below</p>
           </div>
 
-          <div class="typed-message my-number-message user-typed-message">
-            <p>my number is <span class="user-phone-number"></span></p>
+          <div className="typed-message my-number-message user-typed-message hidden">
+            <p>my number is <span className="user-phone-number"></span></p>
           </div>
 
-          <div class="typing">
+          <div className="typing">
             <span></span>
             <span></span>
             <span></span>
@@ -113,19 +112,11 @@ handleCheckbox = () => {
 
         </div>
 
-        <form>
-          <input type="tel" pattern="[0-9]*" autocomplete="on" placeholder='Enter your mobile number' onKeyPress={this.handleKeyPress} onChange={this.handleChange} />
-          <button></button> 
-          <p className="smallerText">
-            By submitting your mobile number, you agree to our{' '}
-            <a href="/termsofservice" id="terms-link" target="_blank"> 
-            terms of service
-            </a> 
-            {' '}and{' '} 
-             <a href="/privacypolicy" id="privacy-link" target="_blank">
-            privacy policy.
-            </a>
-          </p>
+        <form className="hidden">
+          <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
+          <button className="submit-btn" disabled>Submit</button>
+          <br />
+          <p className="smallerText" style="display:none;">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
 
         <div className="copyright">
