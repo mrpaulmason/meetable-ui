@@ -457,10 +457,10 @@ a {
   width: 8px;
   float: left;
   margin: 0 1px;
-  background-color: #9E9EA1;
+  background-color: #8a75fb;
   display: block;
   border-radius: 50%;
-  opacity: .7;
+  opacity: .5;
 }
 .typing span:nth-of-type(1) {
   -webkit-animation: 1s blink infinite 0.3333s;
@@ -533,7 +533,10 @@ a {
     width:100%;
 
 }
-    
+
+.user-phone-number {
+  font-weight: bold;
+}
 
 .hidden {
   display: none;

@@ -50,18 +50,17 @@
         ];
 
         $("input[name='phoneNumber']").keypress(function(e) {
-          if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+          if ((e.which < 48 || e.which > 57)) {
               return false;
             }
             $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
-            
-            var phoneNumber = $(this).val();
-            console.log(phoneNumber);
+        });
+
+        $("input[name='phoneNumber']").keyup(function(e) {
+          var phoneNumber = $(this).val();
             if( validatePhoneNumber(phoneNumber) ) {
-              console.log(true);
               $('button').prop("disabled", false);
             } else {
-              console.log(false);
               $('button').prop("disabled", true);
             }
         });
@@ -72,10 +71,7 @@
     
           if( validatePhoneNumber(phoneNumber) ) {
             $('.user-phone-number').text(phoneNumber);
-            $('.user-typed-message').show();
-
-
-            alert('hi');
+            $('.user-typed-message').removeClass('hidden');
           } else {
             //show error
           }
@@ -105,7 +101,7 @@
                     $('.typing').hide();
                     $('form').removeClass('hidden');
                   }
-              }, 1600 * i );
+              }, 1200 * i );
           }
         }
 
