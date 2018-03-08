@@ -18,7 +18,7 @@
 .typing-indicator.user {
     float: right;
     clear: both;
-    background-color: #39ebd5;
+    background-color: #0F0446;
     padding: 0px 10px;
 }
 
@@ -134,7 +134,7 @@ button {
     margin-left: -65px;
     height: 40px;
     width: 50px;
-    background: #39ebd5;
+    background: #0F0446;
     color: white;
     border: 0;
     -webkit-appearance: none;
@@ -400,7 +400,7 @@ a {
 
 @media (max-width: 437px) {
   .landing-page {
-    width: 95%;
+    width: 93%;
   }
 
   input {
