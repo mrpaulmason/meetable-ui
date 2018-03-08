@@ -104,7 +104,7 @@
             $next = $conversation.find('.typing-indicator').length + 1;
 
             // appending typing indicator html code
-            $conversation.append('<div class="typing-indicator user indicator-'+ $next +'"><p>my number is '+ message +'</p></div>');
+            $conversation.append('<div class="typing-indicator user indicator-'+ $next +'"><p>my number is <strong>'+ message +'</strong></p></div>');
 
             // removing animation
             $conversation.find('.indicator-' + $next).css({ animation: 'unset' });
