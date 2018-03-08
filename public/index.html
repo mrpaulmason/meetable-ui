@@ -157,7 +157,7 @@
                     $indicator.find('span:nth-of-type(2)').fadeOut(150, function() {
                         $indicator.find('span:nth-of-type(3)').fadeOut(100, function() {
                             $indicator.animate({ width: indicatorWidth }, 300, function() {
-                                $indicator.css({ animation: 'unset', backgroundColor: '#7857A4' });
+                                $indicator.css({ animation: 'unset', backgroundColor: '#785EF3' });
                                 $indicator.addClass('expanded');
                                 $indicator.find('p').show();
                                 $indicator.css({ padding: '0px 10px', margin: '6px 0px' });
@@ -196,14 +196,19 @@
         }
 
         function postRequest(phoneNumber) {
+          var refID = window.location.pathname.replace("/", "");
 
-          $.post("http://meetable-api.herokuapp.com/meetings/ac2bc6/accept",
-            {
-                phone_number: phoneNumber,
-            },
-            function(data, status){
-                console.log("Data: " + data + "\nStatus: " + status);
-            });
+          if ( refID.length === 6 ) {
+            //http://meetable-api.herokuapp.com/meetings/ac2bc6/accept
+            $.post("http://meetable-api.herokuapp.com",
+              {
+                  phone_number: phoneNumber,
+              },
+              function(data, status){
+                  console.log("Data: " + data + "\nStatus: " + status);
+              }
+            );
+          }
         }
       };
     </script>

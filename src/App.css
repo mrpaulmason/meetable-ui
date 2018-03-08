@@ -38,12 +38,12 @@
 }
 
 body {
-  background: #f6f6f4;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: .75em;
   margin: 0;
   padding-bottom: 60px;
+  background: #f6f6f4 url("pattern_meetable_01.png") repeat left top;
 }
 
 .nav {
@@ -62,7 +62,7 @@ h1 {
   font-size: 400%;
   font-weight: 400;
   margin-top: 25px;
-  margin-bottom: 0;
+  margin-bottom: 40px;
   color:black;
 
 }

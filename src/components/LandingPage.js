@@ -8,7 +8,7 @@ import Checkbox from 'material-ui/Checkbox';
 import logo from '../ic_meetable_wordmark.svg';
 import meetable_m_logo from '../ic_meetable_icon.svg';
 import wordmark from '../typetreatment_meetable_landingpage.png';
-import arrow_icon from '../ic_arrow_forward_24px.svg';
+import arrow_icon from '../ic_arrow_forward_white.svg';
 
 class LandingPage extends React.Component {
   state = {
