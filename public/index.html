@@ -40,13 +40,16 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+
     <script type="text/javascript">
       window.onload = function() {
 
         var messages = [
           'Hello!',
-          'Welcome. I\'m AI that makes it WAY easier to meet up with people',
-          'To get started please confirm your cellphone number below'
+          'Welcome. I am AI that makes it WAY easier to meet up with people',
+          'To get started please confirm your cellphone number below',
+          'Another question',
+          'One more question'
         ];
 
         $("input[name='phoneNumber']").keypress(function(e) {
@@ -68,17 +71,22 @@
         $('.submit-btn').on('click', function(e){
           e.preventDefault(e);
           var phoneNumber = $('#phoneNumberText').val();
-    
+
           if( validatePhoneNumber(phoneNumber) ) {
             $('.user-phone-number').text(phoneNumber);
-            $('.user-typed-message').removeClass('hidden');
+            $('.user-typed-message').show();
+                      $('form').fadeOut();
+                      $('.typing').show();
+
+                      // creating user indication (from the right side)
+                      createUserIndicator(phoneNumber);
           } else {
             //show error
           }
         });
 
         setTimeout(function(){
-          startChat();
+          loadFirstMessage();
         }, 750);
 
         function validatePhoneNumber(phoneNumber) {
@@ -86,23 +94,105 @@
 
           if(phoneNumber.match(regEx)) {
               return true;
-          }  
+          }
 
           return false;
         }
 
-        function startChat() {
-          for (let i = 0; i < messages.length; i++) {
-              setTimeout( function timer(){
-                  console.log(messages[i]);
-                  $('.message-' + i).removeClass('hidden');
+        function createUserIndicator(message) {
+            $conversation = $('#conversation');
+            $next = $conversation.find('.typing-indicator').length + 1;
 
-                  if(i === 2) {
-                    $('.typing').hide();
-                    $('form').removeClass('hidden');
-                  }
-              }, 1200 * i );
-          }
+            // appending typing indicator html code
+            $conversation.append('<div class="typing-indicator user indicator-'+ $next +'"><p>my number is '+ message +'</p></div>');
+
+            // removing animation
+            $conversation.find('.indicator-' + $next).css({ animation: 'unset' });
+
+            // adding divider and other messeges
+            $conversation.append('<div class="divider"></div>');
+
+            // appending 4th message after timeout.
+            setTimeout( function timer(){
+                createIndicator(messages[3]);
+            }, 600);
+
+        }
+
+        function createIndicator(message) {
+            $conversation = $('#conversation');
+            $next = $conversation.find('.typing-indicator').length + 1;
+
+            // appending typing indicator html code
+            $conversation.append('<div class="typing-indicator indicator-'+ $next +'"><span></span><span></span><span></span><p>'+ message +'</p></div>');
+
+            // getting width of the indicator
+            $width = $conversation.find('.indicator-' + $next).width();
+
+            // hiding <p>
+            $conversation.find('.indicator-' + $next + ' p').hide();
+
+            // adding animation
+            $conversation.find('.indicator-' + $next).css({ animation: '1s bulge infinite ease-out' });
+
+            $conversation.find('.indicator-' + $next + ' span:nth-of-type(1)').css({ animation: '1s blink infinite 0.3333s' });
+
+            $conversation.find('.indicator-' + $next + ' span:nth-of-type(2)').css({ animation: '1s blink infinite 0.6666s' });
+
+            $conversation.find('.indicator-' + $next + ' span:nth-of-type(3)').css({ animation: '1s blink infinite 0.9999s' });
+
+            // appearing message in the indicator
+            appearMessage($next, $width, message.length);
+        }
+
+        function appearMessage(indicatorID, indicatorWidth, msgCharacters) {
+            $indicator = $('.indicator-' + indicatorID);
+            $spans = $indicator.find('span').length;
+            var messagesToShow = 3;
+
+            setTimeout( function timer(){
+
+                // hiding it one by one
+                $indicator.find('span:nth-of-type(1)').fadeOut(150, function() {
+                    $indicator.find('span:nth-of-type(2)').fadeOut(150, function() {
+                        $indicator.find('span:nth-of-type(3)').fadeOut(100, function() {
+                            $indicator.animate({ width: indicatorWidth }, 300, function() {
+                                $indicator.css({ animation: 'unset', backgroundColor: '#7857A4' });
+                                $indicator.addClass('expanded');
+                                $indicator.find('p').show();
+                                $indicator.css({ padding: '0px 10px', margin: '6px 0px' });
+
+                                if (indicatorID <= messagesToShow) {
+
+                                    if (indicatorID === messagesToShow) {
+
+                                        setTimeout( function timer(){
+                                            $('form').fadeIn();
+                                        }, 400);
+                                    } else {
+                                        createIndicator(messages[indicatorID]);
+                                    }
+                                } else if (indicatorID > messagesToShow) {
+
+                                    if (indicatorID-1 !== messages.length) {
+                                        createIndicator(messages[indicatorID-1]);
+                                    }
+                                }
+                            })
+                        });
+                    });
+                });
+
+            }, 60 * msgCharacters);
+        }
+
+        function loadFirstMessage() {
+            createIndicator(messages[0]);
+        }
+
+        function getTypingTime(index) {
+          var text = $('.message-' + index).text();
+          return text.length * 50;
         }
 
         function postRequest(phoneNumber) {
@@ -116,6 +206,8 @@
             });
         }
       };
-  </script>
+    </script>
+
+    
   </body>
 </html>

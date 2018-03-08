@@ -5,8 +5,10 @@ import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index'
 import Typed from 'react-typed';
 import '../copyright-symbol.png';
 import Checkbox from 'material-ui/Checkbox';
-import logo from '../meetable-logo.png';
+import logo from '../ic_meetable_wordmark.svg';
+import meetable_m_logo from '../ic_meetable_icon.svg';
 import wordmark from '../typetreatment_meetable_landingpage.png';
+import arrow_icon from '../ic_arrow_forward_24px.svg';
 
 class LandingPage extends React.Component {
   state = {
@@ -81,47 +83,33 @@ handleCheckbox = () => {
       alert(this.props.user.postResults);
     }
     return (
+
       <div className="landing-page">
+
         <h1>
-         <img src={wordmark} alt='Meetable' />
+         <img src={logo} alt='Meetable Logo' />
         </h1>
 
         <div id="conversation">
-
-          <div className="typed-message message-0 hidden">
-            <p>Hello!</p>
-          </div>
-
-          <div className="typed-message message-1 hidden">
-            <p>Welcome. I am AI that makes it WAY easier to meet up with people</p>
-          </div>
-
-          <div className="typed-message message-2 hidden">
-            <p>To get started please confirm your cellphone number below</p>
-          </div>
-
-          <div className="typed-message my-number-message user-typed-message hidden">
-            <p>my number is <span className="user-phone-number"></span></p>
-          </div>
-
-          <div className="typing">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
+                
         </div>
 
-        <form className="hidden">
+        <form class="hidden">
           <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
-          <button className="submit-btn" disabled>Submit</button>
+          <button className="submit-btn" disabled><img src={arrow_icon} alt="Arrow Icon" /></button>
           <br />
-          <p className="smallerText hidden">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
+          <p className="smallerText">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
+
+        <div className="btn-row" class="hidden">
+          <a href="javascript: void(0);" className="btn">Got it!</a>
+          <a href="javascript: void(0);" className="btn">Resend</a>
+          <a href="javascript: void(0);" className="btn">Change #</a>
+        </div>
 
         <div className="copyright">
           <div className="left">
-            <img src="./images/ic_meetable_icon_hollow.svg" alt="copyright logo" />
+            <img src={meetable_m_logo} alt="M logo" />
           </div>
 
           <div className="right">
@@ -132,7 +120,6 @@ handleCheckbox = () => {
 
           <br className="clear-both" />
         </div>
-
       </div>
     );
   }
