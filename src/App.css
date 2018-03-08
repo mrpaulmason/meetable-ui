@@ -186,6 +186,20 @@ a {
   color: #ffffff;
 }
 
+.tos {
+  padding: 10px 20px 20px;
+  background: white;
+  border: 1px solid rgba(0,0,0,.05);
+}
+
+.tos h2 {
+  color: rgba(0,0,0,.5);
+}
+
+.tos p {
+  color: rgba(0,0,0,.5);
+}
+
 .copyright {
   text-align: center;
   position: fixed;
