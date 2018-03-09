@@ -570,6 +570,15 @@ a {
   display: none;
 }
 
+#conversation {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+#conversation::-webkit-scrollbar { 
+  display: none; 
+}
+
 .btn {
     padding: 18px 5px;
     width: 33%;

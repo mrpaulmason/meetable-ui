@@ -122,6 +122,11 @@
 
         }
 
+        function updateScroll(){
+          var element = document.getElementById("conversation");
+          element.scrollTop = element.scrollHeight;
+        }
+
         function createIndicator(message) {
             $conversation = $('#conversation');
             $next = $conversation.find('.typing-indicator').length + 1;
@@ -129,6 +134,7 @@
             // appending typing indicator html code
             $conversation.append('<div class="typing-indicator indicator-'+ $next +'"><span></span><span></span><span></span><p>'+ message +'</p></div>');
 
+            updateScroll();
             // getting width of the indicator
             $width = $conversation.find('.indicator-' + $next).width();
 
