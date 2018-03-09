@@ -385,7 +385,7 @@ a {
     font-size: 300%;
     font-weight: 500;
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 25px;
   }
 
   h2 {
@@ -447,6 +447,7 @@ a {
 
 #conversation {
     max-width: 450px;
+    margin-bottom: 20px;
 }
 
 #conversation div {
