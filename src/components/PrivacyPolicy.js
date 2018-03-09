@@ -12,7 +12,6 @@ import wordmark from '../typetreatment_meetable_landingpage.png';
 const PrivacyPolicy = () => {
   return (
     <div className='landing-page'>
-      <img src={logo} alt='logo' style={{width: '100px', marginLeft: '-10px', marginTop: '30px'}}/>
       <h1>
          <img src={logo} alt='Meetable Logo' />
       </h1>

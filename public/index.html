@@ -45,11 +45,14 @@
       window.onload = function() {
 
         var messages = [
-          'Hello!',
-          'Welcome. I am AI that makes it WAY easier to meet up with people',
-          'To get started please confirm your cellphone number below',
-          'Another question',
-          'One more question'
+          'Hi there, looks like you met Paul',
+          'Welcome. I\'m AI that makes it WAY easier to meet up with people',
+          'Finally, right?',
+          'It starts with anonymous texting..bc not everyone should have your number forever',
+          'Every number is hidden and names are optional. Obviously.',
+          'Cool? Let\'s get your number and the ball rolling with Paul!',
+          'Another Statement',
+          'Another Statement 2'
         ];
 
         $("input[name='phoneNumber']").keypress(function(e) {
@@ -114,7 +117,7 @@
 
             // appending 4th message after timeout.
             setTimeout( function timer(){
-                createIndicator(messages[3]);
+                createIndicator(messages[6]);
             }, 600);
 
         }
@@ -148,7 +151,7 @@
         function appearMessage(indicatorID, indicatorWidth, msgCharacters) {
             $indicator = $('.indicator-' + indicatorID);
             $spans = $indicator.find('span').length;
-            var messagesToShow = 3;
+            var messagesToShow = 6;
 
             setTimeout( function timer(){
 

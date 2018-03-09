@@ -101,10 +101,10 @@ handleCheckbox = () => {
           <p className="smallerText">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
 
-        <div className="btn-row" class="hidden">
+        <div className="btn-row hidden">
           <a href="javascript: void(0);" className="btn">Got it!</a>
           <a href="javascript: void(0);" className="btn">Resend</a>
-          <a href="javascript: void(0);" className="btn">Change #</a>
+          <a href="javascript: void(0);" className="btn hidden">Change #</a>
         </div>
 
         <div className="copyright">

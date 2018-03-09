@@ -131,16 +131,18 @@ input {
 }
 
 button {
-    margin-left: -65px;
-    height: 40px;
-    width: 50px;
-    background: #0F0446;
-    color: white;
-    border: 0;
-    -webkit-appearance: none;
-    vertical-align: middle;
-    border-radius: 4px;
-    padding-right: 10px;
+  margin-left: -60px;
+  height: 60px;
+  width: 60px;
+  background: #0F0446;
+  color: white;
+  border: 0;
+  -webkit-appearance: none;
+  vertical-align: middle;
+  border-radius: 6px;
+  padding-right: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 button img {
@@ -169,6 +171,7 @@ form p {
 form p a {
   color: rgba(0,0,0,.5);
   font-weight: bold;
+  text-decoration: none;
 }
 
 input[type='checkbox'] {
@@ -586,5 +589,4 @@ a {
     display: flex;
     justify-content: center;
     width:100%;
-
 }
