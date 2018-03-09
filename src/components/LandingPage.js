@@ -98,7 +98,7 @@ handleCheckbox = () => {
           <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
           <button className="submit-btn" disabled><img src={arrow_icon} alt="Arrow Icon" /></button>
           <br />
-          <p className="smallerText">By submitting your mobile number, you agree to our <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
+          <p className="smallerText">By submitting your mobile number, you agree to our <br /> <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
         </form>
 
         <div className="btn-row hidden">
