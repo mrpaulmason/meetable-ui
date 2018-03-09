@@ -567,10 +567,6 @@ a {
   clear: both;
 }
 
-.hidden {
-  display: none;
-}
-
 #conversation {
   max-height: 200px;
   overflow-y: scroll;
@@ -605,4 +601,8 @@ a {
     display: flex;
     justify-content: center;
     width:100%;
+}
+
+.hidden {
+  display: none;
 }
