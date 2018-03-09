@@ -91,7 +91,7 @@ handleCheckbox = () => {
         </h1>
 
         <div id="conversation">
-          <div class="typing-indicator indicator-"><span></span><span></span><span></span><p></p></div>
+        
         </div>
 
         <form class="hidden">

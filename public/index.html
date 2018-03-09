@@ -132,7 +132,7 @@
             $next = $conversation.find('.typing-indicator').length + 1;
 
             // appending typing indicator html code
-            $conversation.append('<div class="typing-indicator indicator-'+ $next +'"><span></span><span></span><span></span><p>'+ message +'</p></div>');
+            $conversation.append('<div class="typing-indicator is-typing indicator-'+ $next +'"><span></span><span></span><span></span><p>'+ message +'</p></div>');
 
             updateScroll();
             // getting width of the indicator
@@ -167,6 +167,7 @@
                         $indicator.find('span:nth-of-type(3)').fadeOut(100, function() {
                             $indicator.animate({ width: indicatorWidth }, 300, function() {
                                 $indicator.css({ animation: 'unset', backgroundColor: '#785EF3' });
+                                $indicator.removeClass('is-typing');
                                 $indicator.addClass('expanded');
                                 $indicator.find('p').show();
                                 $indicator.css({ padding: '0px 10px', margin: '6px 0px' });
