@@ -15,7 +15,7 @@ class App extends Component {
         <Route exact path="/termsofservice" component={TermsOfService} />
         <Route exact path="/privacypolicy" component={PrivacyPolicy} />
         <Route exact path="/map/*" component={MapContainer} />
-        <Route exact path="/*" component={LandingPage} />
+        <Route exact path="/rjkilg" component={LandingPage} />
       </Switch>
     );
   }

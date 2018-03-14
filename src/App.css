@@ -448,6 +448,8 @@ a {
 #conversation {
     max-width: 450px;
     margin-bottom: 20px;
+    max-height: 170px;
+    overflow-y: scroll;
 }
 
 #conversation div {
@@ -567,10 +569,6 @@ a {
   clear: both;
 }
 
-#conversation {
-  max-height: 200px;
-  overflow-y: scroll;
-}
 
 #conversation::-webkit-scrollbar { 
   display: none; 
