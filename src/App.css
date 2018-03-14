@@ -22,6 +22,13 @@
     padding: 0px 10px;
 }
 
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(0,0,0,.5);
+  margin: 40px 0;
+}
+
 .typing-indicator span {
   height: 10px;
   width: 10px;

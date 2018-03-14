@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import LandingPage from './components/LandingPage';
+import InvalidLandingPage from './components/InvalidLandingPage';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import MapContainer from './components/MapContainer';
@@ -15,7 +16,8 @@ class App extends Component {
         <Route exact path="/termsofservice" component={TermsOfService} />
         <Route exact path="/privacypolicy" component={PrivacyPolicy} />
         <Route exact path="/map/*" component={MapContainer} />
-        <Route exact path="/*" component={LandingPage} />
+        <Route exact path="/rjkilg" component={LandingPage} />
+        <Route exact path="/*" component={InvalidLandingPage} />
       </Switch>
     );
   }
