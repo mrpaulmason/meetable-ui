@@ -51,6 +51,11 @@ header {
   padding: 0 20px;
 }
 
+#welcome-area p {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
 #terms-text {
   padding: 0 20px;
   margin: 20px 0 0;
