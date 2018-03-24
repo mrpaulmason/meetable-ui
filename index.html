@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!--<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Montserrat:300,400,500,600" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Meetable</title>
+
+    <script type="text/javascript" src="./resources/scripts/jquery.js"></script>
+  </head>
+  <body class="blue">
+    <div id="root">
+    	<div class="landing-page">
+        <input style="display:none;" type="hidden" id="ref" name="ref" value="">
+    		<header>
+    			<div class="left">
+    				<div class="logo-icon">
+	    				<img src="./images/ic_meetable_icon.svg" alt="copyright logo" />
+	    			</div>
+    			</div>
+
+    			<div class="right">
+	    			<div class="invited-by">
+	    				<p>Invited By Paul</p>
+	    			</div>
+	    		</div>
+
+	    		<br class="clear-both" />
+    		</header>
+
+    		<section id="slogan-area">
+    			<div class="logo-text">
+    				<img width="220" src="./images/ic_meetable_wordmark_white.svg" alt="Meetable Logo" title="Meetable" />
+    			</div>
+
+    			<div class="slogan-text">
+    				<p>Text new people anonymously</p>
+    			</div>
+    		</section>
+
+    		<section id="inputs">
+    			<div class="get-started">
+    				<button class="btn get-started-btn">
+    					Get Started
+    				</button>
+    			</div>
+
+    			<div class="phone-input hidden">
+    				<div>
+			            <input id="phoneNumberText" type="tel" name="phoneNumber" placeholder="ENTER MOBILE NUMBER" autocomplete="off" autocorrect="off" maxlength="14"  />
+			        </div>
+			        <div>
+			            <button class="submit-btn" disabled>Go</button>
+			        </div>
+    			</div>
+    		</section>
+
+    		<section id="terms-text" class="hidden">
+    			<p class="smallerText private-number">
+    				Numbers are linked anonymously via SMS, but never shared. And we don’t update your name
+    			</p>
+
+    			<p class="smallerText terms-of-service hidden">
+    				By tapping "go", you agree to our <br /><a href="/termsofservice" id="terms-link" target="_blank" onclick="return false;">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank" onclick="return false;">privacy policy.</a>
+    			</p>
+    		</section>
+
+    		<section id="welcome-area" class="hidden">
+    			<p>
+                    You’re in!  🚀 <br />
+                    Texts incoming  👆 <br />
+                    Save that contact card  ✅ <br />
+                    Text your mystery friend  👌 <br />
+                </p>
+    		</section>
+
+			<div class="copyright">
+
+				<div class="bottom-btns hidden">
+					<!--<a href="sms:"><button class="btn open-sms-btn">
+    					Open SMS App
+    				</button></a>-->
+
+    				<button class="btn update-number-btn">
+    					RE-ENTER NUMBER
+    				</button>
+				</div>
+
+				<div class="left">
+					<p>
+						2018 Meetable  |  more@meetable.com
+					</p>
+				</div>
+
+				<br class="clear-both" />
+			</div>
+    	</div>
+    </div>
+
+    <script type="text/javascript">
+
+    	$('.get-started-btn').click(function() {
+    		$(this).hide();
+    		$('body').removeClass('blue').addClass('green');
+    		$('.phone-input').removeClass('hidden');
+    		$('#terms-text').removeClass('hidden');
+            $('.slogan-text p').text('Move from app to text, smoothly');
+    	});
+
+        $('.update-number-btn').click(function() {
+            $('.bottom-btns').addClass('hidden');
+            $('body').removeClass('pink').addClass('green');
+            $('.phone-input').removeClass('hidden');
+            $('#terms-text').removeClass('hidden');
+            $('.slogan-text p').text('Text from any app, clutter-free');
+            $('#welcome-area').addClass('hidden');
+            $('.phone-input input').val('');
+            $('.submit-btn').attr('disabled', true);
+            $('.phone-input input').removeClass('plus-one');
+        });
+
+    	$('input').focus(function() {
+		    $('.private-number').hide('hidden');
+		    $('.terms-of-service').removeClass('hidden');
+            $('.phone-input input').addClass('plus-one');
+		    $('body').removeClass('green').addClass('purple');
+            $('.slogan-text p').html('Text to turn people on or off <span class="smallText">👻</span>');
+		}).blur(function() {
+            $(this).attr('placeholder', 'ENTER MOBILE NUMBER');
+            $('.phone-input input').removeClass('plus-one');
+		});
+
+		$("input[name='phoneNumber']").keypress(function(e) {
+			if ((e.which < 48 || e.which > 57)) {
+		      return false;
+		    }
+		    $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
+		});
+
+		$("input[name='phoneNumber']").keyup(function(e) {
+			var phoneNumber = $(this).val();
+		    if( validatePhoneNumber(phoneNumber) ) {
+		    	$('.phone-input button').prop("disabled", false);
+		    } else {
+		    	$('.phone-input button').prop("disabled", true);
+		    }
+		});
+
+		$('.submit-btn').on('click', function(e){
+			e.preventDefault(e);
+			var phoneNumber = $('#phoneNumberText').val();
+
+			if( validatePhoneNumber(phoneNumber) ) {
+				$('body').removeClass('purple').addClass('pink');
+				$('.phone-input').addClass('hidden');
+    			$('#terms-text').addClass('hidden');
+    			$('.bottom-btns').removeClass('hidden');
+    			//$('.copyright .left').addClass('hidden');
+          var ref = $('input#ref').val();
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "https://meetable-api.herokuapp.com/meetings/" + ref + "/accept", true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+                phone_number: phoneNumber
+          }));
+    			$('.slogan-text p').text('Text sent to ' + phoneNumber);
+    			$('#welcome-area').removeClass('hidden');
+			} else {
+				//show error
+			}
+		});
+
+		function validatePhoneNumber(phoneNumber) {
+			var regEx = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+
+			if(phoneNumber.match(regEx)) {
+			    return true;
+			}
+
+			return false;
+		}
+    </script>
+    <script type="text/javascript">
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var m = url.searchParams.get("invite");
+      //var parts = url_string.split('/');
+      //var m = parts.pop() || parts.pop();
+      $('#ref').val(m);
+
+    </script>
+
+  </body>
+</html>
+
+
+<!--
+
+	-->
