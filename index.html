@@ -63,7 +63,7 @@
 
     		<section id="terms-text" class="hidden">
     			<p class="smallerText private-number">
-    				Don't worry, your phone number and name will be kept private.
+    				Numbers are linked anonymously via SMS, but never <br /> shared. And we don’t update your name
     			</p>
 
     			<p class="smallerText terms-of-service hidden">
@@ -83,7 +83,7 @@
     				</button></a>-->
 
     				<button class="btn update-number-btn">
-    					Update Number
+    					RE-ENTER NUMBER
     				</button>
 				</div>
 
@@ -105,11 +105,11 @@
     		$('body').removeClass('blue').addClass('green');
     		$('.phone-input').removeClass('hidden');
     		$('#terms-text').removeClass('hidden');
-            $('.slogan-text p').text('Text from any app, clutter-free');
+            $('.slogan-text p').text('Move from app to text, smoothly');
     	});
 
         $('.update-number-btn').click(function() {
-            $(this).hide();
+            $('.bottom-btns').addClass('hidden');
             $('body').removeClass('pink').addClass('green');
             $('.phone-input').removeClass('hidden');
             $('#terms-text').removeClass('hidden');
@@ -121,14 +121,13 @@
         });
 
     	$('input').focus(function() {
-		    $(this).attr('placeholder', '(532) 432-4353');
 		    $('.private-number').hide('hidden');
 		    $('.terms-of-service').removeClass('hidden');
             $('.phone-input input').addClass('plus-one');
 		    $('body').removeClass('green').addClass('purple');
             $('.slogan-text p').html('Text to turn people on or off <span class="smallText">👻</span>');
 		}).blur(function() {
-		    $(this).attr('placeholder', 'ENTER MOBILE NUMBER');
+            $(this).attr('placeholder', 'ENTER MOBILE NUMBER');
             $('.phone-input input').removeClass('plus-one');
 		});
 
@@ -165,7 +164,7 @@
           xhr.send(JSON.stringify({
                 phone_number: phoneNumber
           }));
-    			$('.slogan-text p').text('Hello text sent to ' + phoneNumber);
+    			$('.slogan-text p').text('Text sent to ' + phoneNumber);
     			$('#welcome-area').removeClass('hidden');
 			} else {
 				//show error

@@ -67,7 +67,7 @@ header {
 
 .phone-input { width: 100%; display: table; }
 .phone-input div { display: table-cell; width: 100%; }
-.phone-input input { width: 100%; padding: .5em 1em; height: 43px;
+.phone-input input { width: 100%; padding: .5em 1em; height: 42px;
   font-weight: bold;
 }
 
