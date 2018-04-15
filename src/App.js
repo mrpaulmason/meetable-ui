@@ -13,8 +13,8 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/termsofservice" component={TermsOfService} />
-        <Route exact path="/privacypolicy" component={PrivacyPolicy} />
+        <Route exact path="/terms/" component={TermsOfService} />
+        <Route exact path="/privacy-policy/" component={PrivacyPolicy} />
         <Route exact path="/map/*" component={MapContainer} />
         <Route exact path="/rjkilg" component={LandingPage} />
         <Route exact path="/*" component={LandingPage} />

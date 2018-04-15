@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="184px" height="131px" viewBox="0 0 184 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>bg_t_01</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15" stroke-linecap="round">
+        <g id="Group-2-Copy" transform="translate(17.000000, 0.000000)" stroke="#000000" stroke-width="2">
+            <path d="M4.5,39.5 L25.5059515,60.5059515" id="Line-2"></path>
+            <path d="M42.735198,34.7831269 C46.2068348,32.2129213 49.1068523,32.6804893 51.5814041,36.1401949 C53.9935064,39.512589 56.9909596,40.0407079 60.4276102,37.7701876" id="Path-4" transform="translate(51.581404, 36.148702) rotate(-138.000000) translate(-51.581404, -36.148702) "></path>
+            <path d="M-0.0834515811,109.532961 C3.3881852,106.962755 6.28820275,107.430323 8.76275451,110.890029 C11.1748569,114.262423 14.17231,114.790542 17.6089606,112.520022" id="Path-4" transform="translate(8.762755, 110.898536) scale(1, -1) rotate(-219.000000) translate(-8.762755, -110.898536) "></path>
+            <path d="M148,96.3072127 L155,90.3072127" id="Path-7"></path>
+            <path d="M77.5,121.5 L95,112" id="Line-2"></path>
+            <path d="M123.971684,37.4447257 C127.443321,34.8745201 130.343338,35.3420882 132.81789,38.8017937 C135.229992,42.1741878 138.227445,42.7023067 141.664096,40.4317864" id="Path-4" transform="translate(132.817890, 38.810301) rotate(-38.000000) translate(-132.817890, -38.810301) "></path>
+            <polyline id="Path-5" stroke-linejoin="round" transform="translate(77.961789, 9.145058) scale(-1, 1) rotate(-80.000000) translate(-77.961789, -9.145058) " points="86.0746264 15.7991579 75.9730325 15.4234934 69.8489514 2.49095747"></polyline>
+            <path d="M141.053723,74.120853 L132,102.121745" id="Path-7"></path>
+            <path d="M148.921143,9.10750101 C151.51447,7.09737904 153.782336,7.09737904 155.724739,9.10750101" id="Path-10" transform="translate(152.322941, 8.353705) rotate(30.000000) translate(-152.322941, -8.353705) "></path>
+            <path d="M148.921143,9.10750101 C151.51447,7.09737904 153.782336,7.09737904 155.724739,9.10750101" id="Path-10" transform="translate(152.322941, 8.353705) rotate(30.000000) translate(-152.322941, -8.353705) "></path>
+            <path d="M52.9519072,91.0767371 C55.5452341,89.0666151 57.8130994,89.0666151 59.7555033,91.0767371" id="Path-10" transform="translate(56.353705, 90.322941) rotate(-60.000000) translate(-56.353705, -90.322941) "></path>
+        </g>
+    </g>
+</svg>

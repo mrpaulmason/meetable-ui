@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
 import Typed from 'react-typed';
 import '../copyright-symbol.png';
-import Checkbox from 'material-ui/Checkbox';
 import logo from '../ic_meetable_wordmark.svg';
 import meetable_m_logo from '../ic_meetable_icon.svg';
 import wordmark from '../typetreatment_meetable_landingpage.png';
-import arrow_icon from '../ic_arrow_forward_white.svg';
 
 class InvalidLandingPage extends React.Component {
   state = {
@@ -18,7 +16,7 @@ class InvalidLandingPage extends React.Component {
   };
 
   componentWillMount() {
-    Checkbox.defaultProps.disableTouchRipple = true
+    
   }
 
   validatePhoneNumber = input => {

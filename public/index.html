@@ -24,7 +24,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
-  <body>
+  <body class="blue">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
@@ -41,56 +41,96 @@
     -->
 
 
-    <script type="text/javascript">
-      window.onload = function() {
 
-        var messages = [
-          'Hi there, looks like you met Paul',
-          'Welcome. I\'m AI that makes it WAY <br /> easier to meet up with people',
-          'Finally, right?',
-          'It starts with anonymous texting..bc <br /> not everyone should have your number forever',
-          'Every number is hidden <br />and names are optional. Obviously.',
-          'Cool? Let\'s get your number and <br /> the ball rolling with Paul!',
-          'Another Statement',
-          'Another Statement 2'
-        ];
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+
+        // InviteeLP & HP State 2
+        $('.get-started-btn').click(function() {
+          $(this).hide();
+          $('body').removeClass('blue').addClass('green');
+          $('.phone-input').removeClass('hidden');
+          $('#terms-text').removeClass('hidden');
+          $('.slogan-text p').html('Your number is forever. Most texting isnt 👻');
+        });
+
+        // apparently superfluous code -- Jeff please delete
+        $('.update-number-btn').click(function() {
+          $('.bottom-btns').addClass('hidden');
+          $('body').removeClass('pink').addClass('green');
+          $('.phone-input').removeClass('hidden');
+          $('#terms-text').removeClass('hidden');
+          $('.slogan-text p').html('THIS COPY IS APPARENTLY UNUSED');
+          $('#welcome-area').addClass('hidden');
+          $('.phone-input input').val('');
+          $('.submit-btn').attr('disabled', true);
+          $('.phone-input input').removeClass('plus-one');
+        });
+
+        // InviteeLP & HP State 3
+        $('input').focus(function() {
+          $('.private-number').hide('hidden');
+          $('.terms-of-service').removeClass('hidden');
+          $('.phone-input input').addClass('plus-one');
+          $('body').removeClass('green').addClass('purple');
+          $('.slogan-text p').html('Save time not contacts. No name required');
+        }).blur(function() {
+          $(this).attr('placeholder', 'YOUR MOBILE NUMBER');
+          
+          var val = $('.phone-input input').val();
+
+          if(val.length === 0) {
+              $('.phone-input input').removeClass('plus-one');
+          }
+        });
 
         $("input[name='phoneNumber']").keypress(function(e) {
           if ((e.which < 48 || e.which > 57)) {
-              return false;
-            }
-            $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
+            return false;
+          }
+          $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1) $2-$3"));
         });
 
         $("input[name='phoneNumber']").keyup(function(e) {
-          var phoneNumber = $(this).val();
+            var phoneNumber = $(this).val();
             if( validatePhoneNumber(phoneNumber) ) {
-              $('button').prop("disabled", false);
+                $('.phone-input button').prop("disabled", false);
             } else {
-              $('button').prop("disabled", true);
+                $('.phone-input button').prop("disabled", true);
             }
         });
 
         $('.submit-btn').on('click', function(e){
-          e.preventDefault(e);
-          var phoneNumber = $('#phoneNumberText').val();
+            e.preventDefault(e);
+            var phoneNumber = $('#phoneNumberText').val();
 
-          if( validatePhoneNumber(phoneNumber) ) {
-            $('.user-phone-number').text(phoneNumber);
-            $('.user-typed-message').show();
-                      $('form').fadeOut();
-                      $('.typing').show();
+            if( validatePhoneNumber(phoneNumber) ) {
+                var formattedPhoneNumber = phoneNumber.replace(/[^0-9.]/g, "");
 
-                      // creating user indication (from the right side)
-                      createUserIndicator(phoneNumber);
-          } else {
-            //show error
-          }
+                $('body').removeClass('purple').addClass('pink');
+                $('.slogan-text').removeClass('alpha-text');
+                $('.phone-input').addClass('hidden');
+                $('#terms-text').addClass('hidden');
+                $('.bottom-btns').removeClass('hidden');
+                //$('.copyright .left').addClass('hidden');
+                var ref = $('input#ref').val();
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://meetable-api.herokuapp.com/meetings/" + ref + "/accept", true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify({
+                      phone_number: formattedPhoneNumber
+                }));
+
+                //Invitee LP & HP State 4 (Success Text)
+                $('.slogan-text p').html('Text sent to ' + phoneNumber); 
+                $('#welcome-area').removeClass('hidden');
+            } else {
+                //show error
+            }
         });
-
-        setTimeout(function(){
-          loadFirstMessage();
-        }, 750);
 
         function validatePhoneNumber(phoneNumber) {
           var regEx = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
@@ -102,126 +142,28 @@
           return false;
         }
 
-        function createUserIndicator(message) {
-            $conversation = $('#conversation');
-            $next = $conversation.find('.typing-indicator').length + 1;
 
-            // appending typing indicator html code
-            $conversation.append('<div class="typing-indicator user indicator-'+ $next +'"><p>my number is <strong>'+ message +'</strong></p></div>');
+        //end of document ready
+      });
 
-            // removing animation
-            $conversation.find('.indicator-' + $next).css({ animation: 'unset' });
-
-            // adding divider and other messeges
-            $conversation.append('<div class="divider"></div>');
-
-            // appending 4th message after timeout.
-            setTimeout( function timer(){
-                createIndicator(messages[6]);
-            }, 600);
-
-        }
-
-        function updateScroll(){
-          var element = document.getElementById("conversation");
-          element.scrollTop = element.scrollHeight;
-        }
-
-        function createIndicator(message) {
-            $conversation = $('#conversation');
-            $next = $conversation.find('.typing-indicator').length + 1;
-
-            // appending typing indicator html code
-            $conversation.append('<div class="typing-indicator is-typing indicator-'+ $next +'"><span></span><span></span><span></span><p>'+ message +'</p></div>');
-
-            updateScroll();
-            // getting width of the indicator
-            $width = $conversation.find('.indicator-' + $next).width();
-
-            // hiding <p>
-            $conversation.find('.indicator-' + $next + ' p').hide();
-
-            // adding animation
-            $conversation.find('.indicator-' + $next).css({ animation: '1s bulge infinite ease-out' });
-
-            $conversation.find('.indicator-' + $next + ' span:nth-of-type(1)').css({ animation: '1s blink infinite 0.3333s' });
-
-            $conversation.find('.indicator-' + $next + ' span:nth-of-type(2)').css({ animation: '1s blink infinite 0.6666s' });
-
-            $conversation.find('.indicator-' + $next + ' span:nth-of-type(3)').css({ animation: '1s blink infinite 0.9999s' });
-
-            // appearing message in the indicator
-            appearMessage($next, $width, message.length);
-        }
-
-        function appearMessage(indicatorID, indicatorWidth, msgCharacters) {
-            $indicator = $('.indicator-' + indicatorID);
-            $spans = $indicator.find('span').length;
-            var messagesToShow = 6;
-
-            setTimeout( function timer(){
-
-                // hiding it one by one
-                $indicator.find('span:nth-of-type(1)').fadeOut(150, function() {
-                    $indicator.find('span:nth-of-type(2)').fadeOut(150, function() {
-                        $indicator.find('span:nth-of-type(3)').fadeOut(100, function() {
-                            $indicator.animate({ width: indicatorWidth }, 300, function() {
-                                $indicator.css({ animation: 'unset', backgroundColor: '#785EF3' });
-                                $indicator.removeClass('is-typing');
-                                $indicator.addClass('expanded');
-                                $indicator.find('p').show();
-                                $indicator.css({ padding: '0px 10px', margin: '6px 0px' });
-
-                                if (indicatorID <= messagesToShow) {
-
-                                    if (indicatorID === messagesToShow) {
-
-                                        setTimeout( function timer(){
-                                            $('form').fadeIn();
-                                        }, 400);
-                                    } else {
-                                        createIndicator(messages[indicatorID]);
-                                    }
-                                } else if (indicatorID > messagesToShow) {
-
-                                    if (indicatorID-1 !== messages.length) {
-                                        createIndicator(messages[indicatorID-1]);
-                                    }
-                                }
-                            })
-                        });
-                    });
-                });
-
-            }, 60 * msgCharacters);
-        }
-
-        function loadFirstMessage() {
-            createIndicator(messages[0]);
-        }
-
-        function getTypingTime(index) {
-          var text = $('.message-' + index).text();
-          return text.length * 50;
-        }
-
-        function postRequest(phoneNumber) {
-          var refID = window.location.pathname.replace("/", "");
-
-          if ( refID.length === 6 ) {
-            //http://meetable-api.herokuapp.com/meetings/ac2bc6/accept
-            $.post("http://meetable-api.herokuapp.com",
-              {
-                  phone_number: phoneNumber,
-              },
-              function(data, status){
-                  console.log("Data: " + data + "\nStatus: " + status);
-              }
-            );
-          }
-        }
-      };
     </script>
+    <script type="text/javascript">
+      window.onload = function() {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var m = url.searchParams.get("m");
+        //var parts = url_string.split('/');
+        //var m = parts.pop() || parts.pop();
+
+        if(m) {
+          $('#ref').val(m); 
+        } else {
+          var _invite = url.searchParams.get("invite");
+          $('#ref').val(_invite); 
+        }
+      }
+    </script>
+
 
     
   </body>

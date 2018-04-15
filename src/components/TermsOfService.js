@@ -12,29 +12,68 @@ import wordmark from '../typetreatment_meetable_landingpage.png';
 const TermsOfService = () => {
   return (
     <div className='landing-page'>
-        <h1>
-         <img src={logo} alt='Meetable Logo' />
-        </h1>
-      <div className="tos">
-        <h2>Terms of Service</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet sem mauris, at pulvinar nisi ultrices  eu. Proin vel libero diam. Sed vitae odio tempor, pretium dui ut, faucibus leo. Nunc efficitur justo nunc. Aenean et lacus risus. Duis venenatis orci ut justo euismod, quis rhoncus libero eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam porta accumsan hendrerit. Nunc mollis ligula eu metus luctus consequat. Ut      sodales risus sed urna dapibus, dictum pharetra ex bibendum. Aliquam aliquam mi at enim pellentesque tristique. Vivamus pulvinar eu tellus in volutpat.
-        </p>
+      
+    <header>
+      <div className="left">
+          <div className="logo-icon">
+              <a href="http://www.meetable.ai/"><img src={meetable_m_logo} alt="copyright logo" /></a>
+          </div>
       </div>
 
+      <div className="right">
+          <div className="invited-by">
+              <p className="no-margin-bottom">Private Beta</p>
+          </div>
+      </div>
 
-      <div className="copyright">
-        <div className="left">
-          <img src={meetable_m_logo} alt="M logo" />
+      <br className="clear-both" />
+    </header>
+
+    <section id="slogan-area" className="padding-zero">
+        <div className="logo-text">
+            <h2>Meetable Inc. Terms of Service</h2>
+        </div>
+    </section>
+
+    <section id="welcome-area" className="terms-area">
+        
+        <p>
+            By using Meetable services, you agree to:
+        </p>
+
+        <p>
+            <ul>
+                <li>be at least 13 years of age</li>
+                <li>NOT use our service to send spam or scam users</li>
+                <li>NOT bully, harass, intimidate, or defame users</li>
+                <li>pay any text-messaging and data charges any you may incur using our Services</li>
+                <li>update your mobile number within 24 hours of changing it to prevent us from sending to someone else messages intended for you</li>
+            </ul>
+        </p>
+
+        <p>
+            We reserve the right to update these Terms of Service later.
+        </p>
+    </section>
+
+    
+    <div className="copyright">
+
+        <div className="bottom-btns hidden">
+            <button className="btn update-number-btn">
+                OOPS UPDATE NUMBER
+            </button>
         </div>
 
-        <div className="right">
-          <p>
-            2018 Meetable  |  more@meetable.com
-          </p>
+        <div className="left">
+            <p>
+                2018 Meetable  |  more@meetable.com
+            </p>
         </div>
 
         <br className="clear-both" />
-      </div>
+    </div>
+
 
     </div>
   )

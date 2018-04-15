@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { postRefAndPhoneNumber, setRef, setPhoneNumber } from '../actions/index';
 import Typed from 'react-typed';
 import '../copyright-symbol.png';
-import Checkbox from 'material-ui/Checkbox';
-import logo from '../ic_meetable_wordmark.svg';
-import meetable_m_logo from '../ic_meetable_icon.svg';
+import logo from '../images/ic_meetable_wordmark_white.svg';
+import meetable_m_logo from '../images/ic_meetable_icon.svg';
 import wordmark from '../typetreatment_meetable_landingpage.png';
-import arrow_icon from '../ic_arrow_forward_white.svg';
 
 class LandingPage extends React.Component {
   state = {
@@ -18,7 +16,6 @@ class LandingPage extends React.Component {
   };
 
   componentWillMount() {
-    Checkbox.defaultProps.disableTouchRipple = true
   }
 
   validatePhoneNumber = input => {
@@ -84,42 +81,89 @@ handleCheckbox = () => {
     }
     return (
 
+
       <div className="landing-page">
+      
+        <input className="hidden" type="hidden" id="ref" name="ref" value="" />
+        <header>
+            <div className="left">
+                <div className="logo-icon">
+                    <a href="http://www.meetable.ai/"><img src={meetable_m_logo} alt="copyright logo" /></a>
+                </div>
+            </div>
 
-        <h1>
-         <img src={logo} alt='Meetable Logo' />
-        </h1>
+            <div className="right">
+                <div className="invited-by">
+                    <p className="no-margin-bottom">Private Beta</p>
+                </div>
+            </div>
 
-        <div id="conversation">
-        
-        </div>
+            <br className="clear-both" />
+        </header>
 
-        <form class="hidden">
-          <input type="tel" maxlength="14" name="phoneNumber" placeholder="Enter your cellphone number" id="phoneNumberText" />
-          <button className="submit-btn" disabled><img src={arrow_icon} alt="Arrow Icon" /></button>
-          <br />
-          <p className="smallerText">By submitting your mobile number, you agree to our <br /> <a href="/termsofservice" id="terms-link" target="_blank">terms of service</a> and <a href="/privacypolicy" id="privacy-link" target="_blank">privacy policy.</a></p>
-        </form>
+        <section id="slogan-area">
+            <div className="logo-text">
+                <img width="160" src={logo} alt="Meetable Logo" title="Meetable" />
+            </div>
+           
+            <div className="slogan-text alpha-text">
+                <p>Text without sharing digits. No app. Free.</p>
+            </div>
+        </section>
 
-        <div class="btn-row hidden">
-          <a href="javascript: void(0);" className="btn">Got it!</a>
-          <a href="javascript: void(0);" className="btn">Resend</a>
-          <a href="javascript: void(0);" className="btn hidden">Change #</a>
-        </div>
+        <section id="inputs">
+            <div className="get-started">
+                <button className="btn get-started-btn purple-btn">
+                    Tap To Text Paul
+                </button>
+            </div>
+
+            <div className="phone-input hidden">
+                <div>
+                    <input id="phoneNumberText" type="tel" name="phoneNumber" placeholder="YOUR MOBILE NUMBER" autoComplete="off" autoCorrect="off" maxLength="14"  />
+                </div>
+                <div>
+                    <button className="submit-btn" disabled>Go</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="terms-text" className="hidden">
+            <p className="smallerText private-number">
+                We don't share numbers or ask names. Users text via private SMS.
+            </p>
+
+            <p className="smallerText terms-of-service hidden">
+                By tapping "go", you agree to our <br /><a href="/terms" id="terms-link" target="_blank" >terms of service</a> and <a href="/privacy-policy" id="privacy-link" target="_blank">privacy policy.</a>
+            </p>
+        </section>
+
+        <section id="welcome-area" className="hidden">
+            <p>
+                You’re in!  🚀 <br />
+                Texts incoming  👆 <br />
+                Save that contact card  ✅ <br />
+                Text your mystery friend  👌 <br />
+            </p>
+        </section>
 
         <div className="copyright">
-          <div className="left">
-            <img src={meetable_m_logo} alt="M logo" />
-          </div>
 
-          <div className="right">
-            <p>
-              2018 Meetable  |  more@meetable.com
-            </p>
-          </div>
+            <div className="bottom-btns hidden">
+                <button className="btn update-number-btn">
+                    OOPS UPDATE NUMBER
+                </button>
+            </div>
 
-          <br className="clear-both" />
+            <div className="left">
+                <p>
+                    2018 Meetable  |  more@meetable.com
+                </p>
+            </div>
+
+            <br className="clear-both" />
         </div>
+
       </div>
     );
   }
