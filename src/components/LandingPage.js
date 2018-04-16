@@ -113,9 +113,11 @@ handleCheckbox = () => {
 
         <section id="inputs">
             <div className="get-started">
-                <button className="btn get-started-btn purple-btn">
+                <a href="sms:1-408-555-1212">
+                  <button className="btn purple-btn tap-to-compose-btn">
                     Tap To Text Paul
-                </button>
+                  </button>
+                </a>
             </div>
 
             <div className="phone-input hidden">
