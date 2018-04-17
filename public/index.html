@@ -147,15 +147,18 @@
         function getRelayNumber() {
 
           var sURL = window.location.pathname.replace("/", "");
-          $.getJSON( "http://meetable-api.herokuapp.com/meetings/fc822e/genrelay", function(data) {
-            console.log( data.relay_number );
-            if(data.relay_number) {
-              $('.sms-link').attr('href', 'sms:' + data.relay_number);
-            }
-          });
+          if(sURL)  {
+            $.getJSON( "http://meetable-api.herokuapp.com/meetings/"+ sURL +"/genrelay", function(data) {
+              console.log( data.relay_number );
+              if(data.relay_number) {
+                $('.sms-link').attr('href', 'sms:' + data.relay_number);
+              }
+            });
+          }
+
         }
 
-
+        getRelayNumber();
         //end of document ready
       });
 
