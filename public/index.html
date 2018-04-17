@@ -48,10 +48,7 @@
 
       $(document).ready(function(){
 
-        //Tap to compose
-        $('.tap-to-compose-btn').click(function(){
-          var relayNumber = '2342342324';
-        });
+
 
         // InviteeLP & HP State 2
         $('.get-started-btn').click(function() {
@@ -145,6 +142,17 @@
           }
 
           return false;
+        }
+
+        function getRelayNumber() {
+
+          var sURL = window.location.pathname.replace("/", "");
+          $.getJSON( "http://meetable-api.herokuapp.com/meetings/fc822e/genrelay", function(data) {
+            console.log( data.relay_number );
+            if(data.relay_number) {
+              $('.sms-link').attr('href', 'sms:' + data.relay_number);
+            }
+          });
         }
 
 
