@@ -107,7 +107,7 @@ handleCheckbox = () => {
             </div>
            
             <div className="slogan-text alpha-text">
-                <p>Text without sharing digits. No app. Free.</p>
+                <p>Easier than sharing digits. No app. No signup. Free.</p>
             </div>
         </section>
 
@@ -115,7 +115,7 @@ handleCheckbox = () => {
             <div className="get-started">
                 <a href="javascript: void(0);" className="sms-link">
                   <button className="btn purple-btn tap-to-compose-btn">
-                    Tap To Text Paul
+                    Start Texting Paul
                   </button>
                 </a>
             </div>
