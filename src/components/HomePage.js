@@ -41,14 +41,14 @@ class HomePage extends React.Component {
               </div>
              
               <div className="slogan-text alpha-text">
-                  <p>Text without sharing digits. No app. Free.</p>
+                  <p>Text without sharing digits. No app. No signup. Free.</p>
               </div>
           </section>
 
           <section id="inputs">
               <div className="get-started">
                   <button className="btn get-started-btn purple-btn">
-                      Get Started
+                      Start Texting Now
                   </button>
               </div>
 
