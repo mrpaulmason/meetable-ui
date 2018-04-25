@@ -48,7 +48,7 @@ class HomePage extends React.Component {
           <section id="inputs">
               <div className="get-started">
                   <button className="btn get-started-btn purple-btn">
-                      Start Texting Now
+                      Get Started
                   </button>
               </div>
 
