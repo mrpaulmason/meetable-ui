@@ -64,7 +64,7 @@ class HomePage extends React.Component {
 
           <section id="terms-text" className="hidden">
               <p className="smallerText private-number">
-                  We don't share numbers or ask names. Users text via private SMS.
+                  We dont share numbers or ask names. Users text via private SMS.
               </p>
 
               <p className="smallerText terms-of-service hidden">
