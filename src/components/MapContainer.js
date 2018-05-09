@@ -10,7 +10,7 @@ class MapContainer extends React.Component {
   };
 
   componentDidMount() {
-    //this.props.addPlaces();
+    this.props.addPlaces();
   }
 
   render() {
