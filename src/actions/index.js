@@ -1,3 +1,5 @@
+import qs from "query-string";
+
 export function postRefAndPhoneNumber(ref, phoneNumber) {
   let payload = {
     phone_number: phoneNumber
@@ -60,9 +62,10 @@ export function signup(email, survey) {
   }
 }
 
-export function addPlaces() {
+export function addPlaces(props) {
+  const param = qs.parse(props.location.search);
   return (dispatch) => {
-    return fetch(`https://meetable-api.herokuapp.com/places?category=coffee`)
+    return fetch('https://meetable-api.herokuapp.com/places?category='+ ('category' in param ? param['category']: 'coffee'))
     .then(res => res.json())
     .then(res => {
       dispatch({type: 'ADD_PLACES', payload: res.locations})
