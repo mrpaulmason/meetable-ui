@@ -41,7 +41,7 @@ class HomePage extends React.Component {
               </div>
              
               <div className="slogan-text alpha-text">
-                  <p>Social planning, simplified.  Updates ✅ Calendars ✅ Nudges ✅ Free ✅</p>
+                  <p>Social planning, simplified.  Updates, Calendars, Nudges, Free ✅</p>
               </div>
           </section>
 
@@ -64,7 +64,7 @@ class HomePage extends React.Component {
 
           <section id="terms-text" className="hidden">
               <p className="smallerText private-number">
-                  We dont share numbers or ask names. Users text via private SMS.
+                  We launch soon. Stay in touch.
               </p>
 
               <p className="smallerText terms-of-service hidden">
@@ -74,10 +74,8 @@ class HomePage extends React.Component {
 
           <section id="welcome-area" className="hidden">
               <p>
-                  You’re in!  🚀 <br />
-                  Texts incoming  👆 <br />
-                  Save that contact card  ✅ <br />
-                  Text your mystery friend  👌 <br />
+                  You're in!  🚀 <br />
+                  You'll hear from us soon!  👋 <br />
               </p>
           </section>
 
