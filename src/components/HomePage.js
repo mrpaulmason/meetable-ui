@@ -41,7 +41,7 @@ class HomePage extends React.Component {
               </div>
              
               <div className="slogan-text alpha-text">
-                  <p>Text without sharing numbers. No app. No signup. Free.</p>
+                  <p>Social planning, simplified.  Updates ✅ Calendars ✅ Nudges ✅ Free ✅</p>
               </div>
           </section>
 
