@@ -89,7 +89,7 @@ class HomePage extends React.Component {
 
               <div className="left">
                   <p>
-                      2018 Meetable  |  more@meetable.com
+                      2020 Meetable  |  more@meetable.com
                   </p>
               </div>
 
