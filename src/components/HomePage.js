@@ -41,7 +41,7 @@ class HomePage extends React.Component {
               </div>
              
               <div className="slogan-text alpha-text">
-                  <p>Automating everyday social scheduling, gently</p>
+                  <p>Make plans without all the texting</p>
               </div>
           </section>
 
